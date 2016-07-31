@@ -1,0 +1,18 @@
+.widget_social_icons a.widget-item{
+	margin: 0.5em;
+}
+
+.widget_social_icons .widget-row:first-child a{
+	margin-top: 0;
+}
+
+.widget_social_icons .widget-row:last-child a{
+	margin-bottom: 0;
+}
+
+.widget_social_icons a.widget-item:first-child{
+	margin-left: 0;
+}
+.widget_social_icons a.widget-item:last-child{
+	margin-right:0;
+}
