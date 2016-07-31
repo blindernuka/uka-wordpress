@@ -1,0 +1,521 @@
+/*
+Theme Name: UKA
+Theme URI: http://blindernuka.no
+Author: Vegard Andersen
+Author URI: http://github.com/vegarda
+Description: UKA på Blindern
+Version: 0.1
+Text Domain: uka
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700';
+@import 'https://fonts.googleapis.com/css?family=Comfortaa:300,400,700';
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,700';
+
+
+html{
+	background-color: #000d1f;
+	background-image: url("/wp-content/themes/uka/images/1920.png");
+	background-attachment: fixed;
+	background-position: 50%;
+	
+	/*background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(1350px, #000d1f)), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1354px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
+	background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
+	background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;*/
+	
+	/*font-family: Roboto, Verdana;*/
+	font-weight: normal;
+	font-size: 12px;
+	color: #000d1f;
+}
+
+body{
+}
+
+body::-webkit-scrollbar {
+	width: 0.5em;
+}
+ 
+body::-webkit-scrollbar-track {
+	background-color: rgba(0,0,0,0);
+	color: rgba(0,0,0,0);
+}
+ 
+body::-webkit-scrollbar-thumb {
+	background-color: #fce100;
+}
+
+/*
+a, p, div, span, h1, h2, h3, h4, h5, h6, body, html{
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+*/
+
+a{
+	/*color: #fce100;*/
+	color: #000d1f;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #fce100;
+}
+
+
+a img{
+	display: block;
+}
+
+h1{
+	font-size: 3em;
+	font-weight: bold;
+	margin: 0;
+}
+
+h2{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+h3{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+h4{
+	font-size: 1.5em;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#page{
+	overflow: auto;
+}
+
+.site-inner{
+
+}
+
+/*******************
+HEADER
+********/
+
+header#masthead{
+	/*margin-top: 100px;
+	margin-bottom: 50px;*/
+    /*background-image: url('http://uka.joknuden.no/wp-content/themes/uka/images/logo.png');
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: 50%;*/
+}
+
+header#masthead ul{
+	/*list-style: none;
+	margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-around;*/
+}
+
+header#masthead li{
+	/*display: inline-block;*/
+
+}
+
+header#masthead li a{
+	/*
+	color: #fce100;
+	font-family: 'Comfortaa';
+	font-weight: 300;
+	font-size: 2em;
+	text-decoration: none;
+	text-transform: uppercase;
+	*/
+}
+
+header#masthead li a:hover{
+}
+
+div.header-image{
+	margin: 2em 0;
+}
+
+div.header-image a{
+	display: block;
+	overflow: hidden;
+}
+
+div.header-image img{
+	position: relative;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	height: 75px;
+}
+
+
+/*******************
+NAV
+********/
+
+nav{
+}
+.menu a{
+	padding: 0.5em;
+	display: block;
+	font-weight: bold;
+}
+
+.sub-menu{
+	display: none;
+}
+
+
+/*******************
+MAIN
+********/
+main#main{
+	display: flex;
+	flex-direction: column;
+}
+
+/*******************
+ARTICLES
+********/
+
+article{
+	margin: 1em 0;
+}
+
+section#articles{
+	flex-basis: 0px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: auto;
+}
+
+body.home article.format-standard{
+	/*height: 400px;*/
+	position: relative;
+	overflow: hidden;
+}
+
+body.home article.format-standard header{
+}
+
+body.home article.format-standard header.entry-header{
+	color: #fce100;
+	position: absolute;
+	bottom: 0;
+	margin: 1em;
+	max-height: 100%;
+}
+
+body.home article.format-standard span.entry-title{
+	font-size: 4em;
+	font-weight: 700;
+	display: block;
+}
+
+body.home article.format-standard span.entry-title a{
+	text-shadow: 0px 0px 0.25em #000d1f;
+}
+
+body.home article.format-standard span.entry-excerpt a{
+	text-shadow: 0px 0px 0.25em #000d1f;
+}
+
+body.home article.format-standard .entry-excerpt{
+	font-size: 2em;
+	font-weight: 300;
+}
+
+body.home article.format-standard .entry-content{
+	position: absolute;
+	bottom: 0;
+	display: block;
+}
+
+body.home article.format-standard .entry-footer{
+	position: absolute;
+	top: 0;
+	margin: 1em;
+}
+
+
+body.home article.format-standard a.entry-anchor{
+	display: block;
+	position: relative;
+	/*height: 100%;
+	width: 100%;*/
+	overflow: hidden;
+	background-color: rgba(255,255,255,0.5);
+	
+}
+
+body.home article.format-standard a{
+	color: #fce100;
+}
+
+body.home article.format-standard img.entry-thumbnail{
+	height: 100%;
+	width: 100%;
+}
+
+
+
+/*******************
+SIDEBAR
+********/
+
+aside#secondary{
+	flex-basis: 0;
+	flex-grow: 0;
+	flex-shrink: 0;
+	min-width: auto;
+}
+
+aside#secondary ul#menu-social-links{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+aside#secondary ul#menu-social-links a{
+	display: block;
+	height: 50px;
+	width: 50px;
+	margin: 50px auto;
+	font-size: 0;
+}
+
+aside#secondary ul#menu-social-links a[href*="facebook"]{
+	background-color: blue;
+}
+
+aside#secondary ul#menu-social-links a[href*="instagram"]{
+	background-color: brown;
+}
+
+aside#secondary ul#menu-social-links a[href*="snapchat"]{
+	background-color: yellow;
+}
+
+aside#secondary ul#menu-social-links a[href*="youtube"]{
+	background-color: red;
+}
+
+
+/*******************
+FOOTER
+********/
+
+footer{
+	color: rgba(255,255,255,0.95);
+	font-size: 0.75em;
+}
+
+footer.site-footer{
+	background-color: rgba(0,0,0,0.8);
+}
+
+footer .logo{
+	self-align: center;
+}
+
+/*******************
+PAGE NAVIGATION
+********/
+
+.page-numbers {
+	font-weight: bold;
+    padding: 0.5em;
+    display: inline-block;
+    display: inline-flex;
+}
+
+/*******************
+WIDGETS
+********/
+
+.widget{
+	margin: 1em 0;
+}
+
+.widget-row{
+	/*
+	display: flex;
+	width: 100%;*/
+}
+
+.widget-item{
+	/*padding: 0.5em;*/
+	/*margin: 0.5em;*/
+}
+
+
+/*******************
+SOCIAL ICON WIDGET
+********/
+
+a.social-icon-anchor{
+	height: 3em;
+	width: 3em;
+	line-height: 3em;
+	display: block;
+	color: #fce100;
+	background-color: #000d1f;
+	border-radius: 2em;
+	text-align: center;
+}
+
+a.social-icon-anchor:hover{
+	color: rgba(255,255,255,0.95);
+}
+
+i.social-icon{
+	font-size: 2em;
+	display: block;
+	line-height: inherit;
+}
+
+.widget-social-icons-container{
+}
+
+.social-icon-container{
+}
+
+
+
+/*******************
+INSTAGRAM WIDGET
+********/
+
+.widget-instagram-container{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.widget-instagram-container a{
+	background-color: black;
+}
+
+.instagram-image{
+	/*height: 100px;
+	width: 100px;*/
+}
+.instagram-image:hover{
+	opacity: 0.75;
+}
+
+
+/*******************
+FRAMEWORK
+********/
+
+.flex{
+	display: flex;
+	width: 100%;
+}
+
+.center{
+	justify-content: center;
+}
+
+.space-around{
+	justify-content: space-around;
+}
+
+.space-between{
+	justify-content: space-between;
+}
+
+.page-title{
+	color: #000d1f;
+}
+
+.translucent{
+	background-color: rgba(255,255,255,0.95);
+}
+
+.opaque{
+	background-color: rgba(255,255,255,0.95);
+}
+
+.transparent{
+	background-color: rgba(0,0,0,0);
+}
+
+
+
+
+
+.container{
+	margin: 0 auto;
+}
+
+.row{
+	padding: 0 0.5em;
+}
+
+.column{
+	margin: 0 0.5em;
+}
+
+@media screen and (min-width: 600px){
+	div.header-image img{
+		height: 100px;
+	}
+}
+
+@media screen and (min-width: 768px){
+	html{
+		font-size: 16px;
+	}
+	
+	div.header-image img{
+		height: 146px;
+	}
+	
+	main#main{
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 960px){
+	html{
+		font-size: 18px;
+	}
+	.container{
+		width: 900px;
+	}
+}
+
+
+
+/*******************
+WP FIX
+********/
+
+.screen-reader-text{
+	display: none;
+}
+
+
+
+
+
+
