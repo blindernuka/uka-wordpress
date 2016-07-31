@@ -1,0 +1,38 @@
+.widget_instagram .size150{
+	height: 150px;
+	width: 150px;
+}
+
+.widget_instagram .size100{
+	height: 100px;
+	width: 100px;
+}
+
+.widget_instagram .size75{
+	height: 75px;
+	width: 75px;
+}
+
+.widget_instagram .size50{
+	height: 50px;
+	width: 50px;
+}
+
+.widget_instagram a.widget-item{
+	margin: 0.5em;
+}
+
+.widget_instagram .widget-row:first-child a{
+	margin-top: 0;
+}
+
+.widget_instagram .widget-row:last-child a{
+	margin-bottom: 0;
+}
+
+.widget_instagram a.widget-item:first-child{
+	margin-left: 0;
+}
+.widget_instagram a.widget-item:last-child{
+	margin-right:0;
+}
