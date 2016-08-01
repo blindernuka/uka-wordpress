@@ -65,7 +65,24 @@ class UKA_Program extends WP_Widget {
 			foreach ($data['events'] as $key => $event){
 				if (!$day && ($event['time_start']) > $today){
 					$day = strtotime('midnight', $event['time_start']) + 21600;
-					echo '<div class="widget-row widget-title">'.strftime('%e. %B', $day).'</div>';	
+					echo '<div class="widget-row widget-title flex space-around">';
+					
+					$daythemes = $instance['daythemes'];
+					for ($i = 1; $i <= $daythemes; $i++) {
+						if (isset($instance['daytheme_'.$i]) && isset($instance['daytheme_date_'.$i])){
+							if (strtotime('midnight', $event['time_start']) == strtotime($instance['daytheme_date_'.$i])){
+								$daytheme = $instance['daytheme_'.$i];
+								break;
+							}
+						}
+					}
+					if ($daytheme){
+						echo '<span class="uka-program-daytheme">'.$daytheme.'</span><span "class="uka-program-date">'.strftime('%d.%m', $day).'</span>';
+					}
+					else{
+						echo '<span "class="uka-program-date">'.strftime('%e. %B', $day).'</span>';
+					}
+					echo '</div>';
 				}
 				if (($event['time_start'] > $day) && ($event['time_start'] < $day + 86400)){
 					$title = $event['title'];
@@ -96,14 +113,38 @@ class UKA_Program extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$defaults =  array('eventgroup' => 1);
+		$defaults =  array('eventgroup' => 1, 'daythemes' => 0);
 		$instance = wp_parse_args((array) $instance, $defaults);
 		$eventgroup = $instance['eventgroup'];
+		$daythemes = $instance['daythemes'];
 		
 		?>
 		<p><label for="<?php echo $this->get_field_id('eventgroup'); ?>"><?php _e('Eventgroup: '); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id('eventgroup'); ?>" name="<?php echo $this->get_field_name('eventgroup'); ?>" type="text" value="<?php echo esc_attr($eventgroup); ?>" /></p>
+		<input class="tiny-text" id="<?php echo $this->get_field_id('eventgroup'); ?>" name="<?php echo $this->get_field_name('eventgroup'); ?>" type="text" value="<?php echo esc_attr($eventgroup); ?>" /></p>
+		
+		<p><label for="<?php echo $this->get_field_id('daythemes'); ?>"><?php _e('Number of daythemes: '); ?></label>
+		<input class="tiny-text" id="<?php echo $this->get_field_id('daythemes'); ?>" name="<?php echo $this->get_field_name('daythemes'); ?>" type="number" step="1" min="1" value="<?php echo $daythemes; ?>" size="3" /></p>
+		
 		<?php 
+		
+		for ($i = 1; $i <= $daythemes; $i++) {
+			if (isset($instance['daytheme_'.$i]) && isset($instance['daytheme_date_'.$i])){
+				$temp_daytheme = $instance['daytheme_'.$i];
+				$temp_daytheme_date = $instance['daytheme_date_'.$i];
+			}
+			else {
+				$temp_daytheme = '';
+				$temp_daytheme_date = '';
+			}
+			echo '
+				<p>
+					<label for="'.$this->get_field_id('daytheme_'.$i).'">'.__( 'Daytheme '.$i.':' ).'</label> 
+					<input class="widefat" id="'.$this->get_field_id( 'daytheme_date_'.$i ).'" name="'.$this->get_field_name( 'daytheme_date_'.$i ).'" type="text" value="'.esc_attr( $temp_daytheme_date ).'" placeholder="'.date("Y-m-d").'">
+					<input class="widefat" id="'.$this->get_field_id( 'daytheme_'.$i ).'" name="'.$this->get_field_name( 'daytheme_'.$i ).'" type="text" value="'.esc_attr( $temp_daytheme ).'" placeholder="Pub-til-pub">
+				</p>';
+		}
+		
+		
 	}
 
 
@@ -120,7 +161,18 @@ class UKA_Program extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['eventgroup'] = sanitize_text_field( $new_instance['eventgroup'] );
+		$instance['daythemes'] = sanitize_text_field( $new_instance['daythemes'] );
 
+		for ($i = 1; $i <= $old_instance['daythemes']; $i++){
+			if (!empty($new_instance['daytheme_date_'.$i])){
+				$instance['daytheme_date_'.$i] = strftime("%Y-%m-%d", (strtotime($new_instance['daytheme_date_'.$i])));
+			}
+			else{
+				$instance['daytheme_date_'.$i] = '';
+			}
+			$instance['daytheme_'.$i] = (!empty($new_instance['daytheme_'.$i])) ? sanitize_text_field($new_instance['daytheme_'.$i]) : '';
+		}	
+	
 		return $instance;
 	}
 	
