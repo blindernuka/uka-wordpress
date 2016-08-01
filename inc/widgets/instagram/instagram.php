@@ -103,10 +103,10 @@ class Instagram extends WP_Widget {
 		?>
 		
 		<p><label for="<?php echo $this->get_field_id('rows'); ?>"><?php _e('Number of rows to show: '); ?></label>
-		<input class="small-text" id="<?php echo $this->get_field_id('rows'); ?>" name="<?php echo $this->get_field_name('rows'); ?>" type="number" step="1" min="1" value="<?php echo $rows; ?>" size="3" /></p>
+		<input class="tiny-text" id="<?php echo $this->get_field_id('rows'); ?>" name="<?php echo $this->get_field_name('rows'); ?>" type="number" step="1" min="1" value="<?php echo $rows; ?>" size="3" /></p>
 		
 		<p><label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Number of columns to show: '); ?></label>
-		<input class="small-text" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="number" step="1" min="1" value="<?php echo $columns; ?>" size="10" /></p>
+		<input class="tiny-text" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="number" step="1" min="1" value="<?php echo $columns; ?>" size="10" /></p>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id('size'); ?>"><?php _e('Image size: '); ?></label>

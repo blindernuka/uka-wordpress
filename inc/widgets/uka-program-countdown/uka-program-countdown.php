@@ -81,7 +81,7 @@ class UKA_Program_Countdown extends WP_Widget {
 		
 		?>
 		<p><label for="<?php echo $this->get_field_id('eventgroup'); ?>"><?php _e('Eventgroup: '); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id('eventgroup'); ?>" name="<?php echo $this->get_field_name('eventgroup'); ?>" type="text" value="<?php echo esc_attr($eventgroup); ?>" /></p>
+		<input class="tiny-text" id="<?php echo $this->get_field_id('eventgroup'); ?>" name="<?php echo $this->get_field_name('eventgroup'); ?>" type="text" value="<?php echo esc_attr($eventgroup); ?>" /></p>
 		<?php 
 	}
 
