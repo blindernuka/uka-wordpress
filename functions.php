@@ -1,5 +1,22 @@
 <?php
 
+function open_graph(){
+	
+	global $post;
+	
+	echo '<meta property="fb:app_id" content="" />'."\n";
+	echo '<meta property="fb:admin" content="vegarda,miaemiliefj,marthesandli,750936250,kjersti.fossen,svalheim,swintherlarsen,potetsaus" />'."\n";
+	echo '<meta property="og:title" content="'.get_bloginfo('name').'" />'."\n";
+	echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\n";
+	echo '<meta property="og:type" content="website" />'."\n";
+	echo '<meta property="og:url" content="http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"].'" />'."\n";
+	
+	$custom_logo_id = get_theme_mod('custom_logo');
+	$image = wp_get_attachment_image_src($custom_logo_id , 'full');
+	echo '<meta property="og:image" content="'.$image[0].'" />'."\n";
+	
+}
+add_action('wp_head', 'open_graph');
 
 function uka_widgets_init() {
 	register_sidebar( array(
