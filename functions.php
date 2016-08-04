@@ -1,22 +1,5 @@
 <?php
 
-function open_graph(){
-	
-	global $post;
-	
-	echo '<meta property="fb:app_id" content="" />'."\n";
-	echo '<meta property="fb:admin" content="vegarda,miaemiliefj,marthesandli,750936250,kjersti.fossen,svalheim,swintherlarsen,potetsaus" />'."\n";
-	echo '<meta property="og:title" content="'.get_bloginfo('name').'" />'."\n";
-	echo '<meta property="og:description" content="'.get_bloginfo('description').'" />'."\n";
-	echo '<meta property="og:type" content="website" />'."\n";
-	echo '<meta property="og:url" content="http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"].'" />'."\n";
-	
-	$custom_logo_id = get_theme_mod('custom_logo');
-	$image = wp_get_attachment_image_src($custom_logo_id , 'full');
-	echo '<meta property="og:image" content="'.$image[0].'" />'."\n";
-	
-}
-add_action('wp_head', 'open_graph');
 
 function uka_widgets_init() {
 	register_sidebar( array(
@@ -94,6 +77,11 @@ require(get_template_directory().'/inc/widgets/social-icons/social-icons.php');
 require(get_template_directory().'/inc/widgets/instagram/instagram.php');
 require(get_template_directory().'/inc/widgets/uka-program/uka-program.php');
 require(get_template_directory().'/inc/widgets/uka-program-countdown/uka-program-countdown.php');
+
+/**
+ * Plugin additions.
+ */
+require(get_template_directory().'/inc/plugins/seo/seo.php');
 
 /**
  * Customizer additions.

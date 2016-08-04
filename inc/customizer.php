@@ -91,7 +91,7 @@ function uka_footer_customizer( $wp_customize ) {
 
 }
 
-add_action( 'customize_register', 'uka_footer_customizer' );
+add_action('customize_register', 'uka_footer_customizer');
 
 
 
