@@ -12,7 +12,7 @@ function uka_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-	register_sidebar( array(
+	/*register_sidebar( array(
 		'name'          => __( 'Content Bottom 1', 'uka' ),
 		'id'            => 'sidebar-2',
 		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'uka' ),
@@ -30,7 +30,7 @@ function uka_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+	) );*/
 }
 add_action( 'widgets_init', 'uka_widgets_init' );
 
@@ -88,4 +88,43 @@ require(get_template_directory().'/inc/plugins/seo/seo.php');
  */
 require(get_template_directory().'/inc/customizer.php');
 
+/**
+ * Remove categories
+ */
+function uka_remove_categories(){
+    register_taxonomy('category', array());
+}
+add_action('init', 'uka_remove_categories');
+
+/**
+ * Remove unused Wordpress widgets
+ */
+function uka_remove_widgets(){
+    register_taxonomy('category', array());
+	unregister_widget('WP_Widget_Categories');
+	unregister_widget('WP_Widget_RSS');
+	unregister_widget('WP_Widget_Pages');
+	unregister_widget('WP_Widget_Calendar');
+	unregister_widget('WP_Widget_Archives');
+	unregister_widget('WP_Widget_Links');
+	unregister_widget('WP_Widget_Meta');
+	unregister_widget('WP_Widget_Search');
+	unregister_widget('WP_Widget_Text');
+	unregister_widget('WP_Widget_Recent_Posts');
+	unregister_widget('WP_Widget_Recent_Comments');
+	unregister_widget('WP_Widget_Tag_Cloud');
+	unregister_widget('WP_Nav_Menu_Widget');
+}
+add_action('widgets_init', 'uka_remove_widgets');
+
+ 
+ 
+ 
+ 
 ?>
+
+
+
+
+
+
