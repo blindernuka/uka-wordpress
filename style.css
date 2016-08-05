@@ -161,7 +161,7 @@ div.header-image img{
 	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
-	height: 75px;
+	height: 65px;
 }
 
 
@@ -172,13 +172,17 @@ NAV
 nav{
 }
 .menu a{
-	padding: 0.5em;
+	padding: 0.75em;
 	display: block;
 	font-weight: bold;
 }
 
 .sub-menu{
 	display: none;
+}
+
+#menu-main-menu{
+	flex-direction: column;
 }
 
 
@@ -220,11 +224,12 @@ body.home article.format-standard header.entry-header{
 	bottom: 0;
 	margin: 1em;
 	max-height: 100%;
+	max-width: 100%;
 }
 
 body.home article.format-standard span.entry-title{
-	font-size: 4em;
-	font-weight: 700;
+	font-size: 2.5em;
+	font-weight: bold;
 	display: block;
 }
 
@@ -237,8 +242,8 @@ body.home article.format-standard span.entry-excerpt a{
 }
 
 body.home article.format-standard .entry-excerpt{
-	font-size: 2em;
-	font-weight: 300;
+	font-size: 1.5em;
+	font-weight: normal;
 }
 
 body.home article.format-standard .entry-content{
@@ -262,6 +267,10 @@ body.home article.format-standard a.entry-anchor{
 	overflow: hidden;
 	background-color: rgba(255,255,255,0.5);
 	
+}
+
+body.home article.format-standard a.post-edit-link{
+	font-size: 1.5em;
 }
 
 body.home article.format-standard a{
@@ -459,10 +468,6 @@ FRAMEWORK
 	background-color: rgba(0,0,0,0);
 }
 
-
-
-
-
 .container{
 	margin: 0 auto;
 }
@@ -475,7 +480,21 @@ FRAMEWORK
 	margin: 0 0.5em;
 }
 
+
+/*******************
+RESPONSIVE
+********/
+@media screen and (min-width: 480px){
+	html{
+		font-size: 14px;
+	}
+}
+
+
 @media screen and (min-width: 600px){
+	html{
+		font-size: 16px;
+	}
 	div.header-image img{
 		height: 100px;
 	}
@@ -493,6 +512,16 @@ FRAMEWORK
 	main#main{
 		flex-direction: row;
 	}
+	
+	#menu-main-menu{
+		flex-direction: row;
+	}
+	body.home article.format-standard span.entry-title{
+		font-size: 3em;
+	}
+	body.home article.format-standard span.entry-excerpt{
+		font-size: 2em;
+	}
 }
 
 @media screen and (min-width: 960px){
@@ -501,6 +530,9 @@ FRAMEWORK
 	}
 	.container{
 		width: 900px;
+	}
+	body.home article.format-standard span.entry-title{
+		font-size: 3.5em;
 	}
 }
 
