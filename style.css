@@ -28,7 +28,7 @@ html{
 	
 	/*font-family: Roboto, Verdana;*/
 	font-weight: normal;
-	font-size: 12px;
+	font-size: 16px;
 	color: #000d1f;
 }
 
@@ -228,7 +228,7 @@ body.home article.format-standard header.entry-header{
 }
 
 body.home article.format-standard span.entry-title{
-	font-size: 2.5em;
+	font-size: 2em;
 	font-weight: bold;
 	display: block;
 }
@@ -242,7 +242,7 @@ body.home article.format-standard span.entry-excerpt a{
 }
 
 body.home article.format-standard .entry-excerpt{
-	font-size: 1.5em;
+	font-size: 1.25em;
 	font-weight: normal;
 }
 
@@ -270,7 +270,7 @@ body.home article.format-standard a.entry-anchor{
 }
 
 body.home article.format-standard a.post-edit-link{
-	font-size: 1.5em;
+	font-size: 1.25em;
 }
 
 body.home article.format-standard a{
@@ -280,6 +280,10 @@ body.home article.format-standard a{
 body.home article.format-standard img.entry-thumbnail{
 	height: 100%;
 	width: 100%;
+}
+
+body.single article.post header{
+	text-align: center;
 }
 
 
@@ -522,6 +526,9 @@ RESPONSIVE
 	body.home article.format-standard span.entry-excerpt{
 		font-size: 2em;
 	}
+	body.home article.format-standard a.post-edit-link{
+		font-size: 1.5em;
+	}
 }
 
 @media screen and (min-width: 960px){
@@ -543,7 +550,7 @@ WP FIX
 ********/
 
 .screen-reader-text{
-	display: none;
+	/*display: none;*/
 }
 
 
