@@ -171,14 +171,54 @@ NAV
 
 nav{
 }
+
+ul.menu, ul.sub-menu, li.menu-item{
+	z-index: 10;
+}
+
 .menu a{
 	padding: 0.75em;
-	display: block;
+	display: inline-block;
 	font-weight: bold;
+}
+
+li.menu-item{
+	position: relative;
 }
 
 .sub-menu{
 	display: none;
+	background-color: rgba(255,255,255,0.95);
+}
+
+ul.menu > li.menu-item-has-children > a:after{
+	content: " ▾";
+	line-height: 1;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu,
+li.menu-item-has-children:focus > ul.sub-menu{
+	display: block;
+	position: absolute;
+	min-width: 100%;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children:after{
+	content: " ▸";
+	line-height: 1;
+	padding: 0.5em;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children:hover > ul.sub-menu,
+li.menu-item-has-children:focus > ul.sub-menu > li.menu-item-has-children:focus > ul.sub-menu{
+	top: 0;
+	left: 100%;
 }
 
 #menu-main-menu{
@@ -209,16 +249,16 @@ section#articles{
 	min-width: auto;
 }
 
-body.home article.format-standard{
+body.home article{
 	/*height: 400px;*/
 	position: relative;
 	overflow: hidden;
 }
 
-body.home article.format-standard header{
+body.home article header{
 }
 
-body.home article.format-standard header.entry-header{
+body.home article header.entry-header{
 	color: #fce100;
 	position: absolute;
 	bottom: 0;
@@ -227,39 +267,39 @@ body.home article.format-standard header.entry-header{
 	max-width: 100%;
 }
 
-body.home article.format-standard span.entry-title{
+body.home article span.entry-title{
 	font-size: 2em;
 	font-weight: bold;
 	display: block;
 }
 
-body.home article.format-standard span.entry-title a{
+body.home article span.entry-title a{
 	text-shadow: 0px 0px 0.25em #000d1f;
 }
 
-body.home article.format-standard span.entry-excerpt a{
+body.home article span.entry-excerpt a{
 	text-shadow: 0px 0px 0.25em #000d1f;
 }
 
-body.home article.format-standard .entry-excerpt{
+body.home article .entry-excerpt{
 	font-size: 1.25em;
 	font-weight: normal;
 }
 
-body.home article.format-standard .entry-content{
+body.home article .entry-content{
 	position: absolute;
 	bottom: 0;
 	display: block;
 }
 
-body.home article.format-standard .entry-footer{
+body.home article .entry-footer{
 	position: absolute;
 	top: 0;
 	margin: 1em;
 }
 
 
-body.home article.format-standard a.entry-anchor{
+body.home article a.entry-anchor{
 	display: block;
 	position: relative;
 	/*height: 100%;
@@ -269,20 +309,21 @@ body.home article.format-standard a.entry-anchor{
 	
 }
 
-body.home article.format-standard a.post-edit-link{
+body.home article a.post-edit-link{
 	font-size: 1.25em;
 }
 
-body.home article.format-standard a{
+body.home article a{
 	color: #fce100;
 }
 
-body.home article.format-standard img.entry-thumbnail{
+body.home article img.entry-thumbnail{
 	height: 100%;
 	width: 100%;
 }
 
-body.single article.post header{
+body.single article header,
+body.page article header{
 	text-align: center;
 }
 
@@ -520,13 +561,13 @@ RESPONSIVE
 	#menu-main-menu{
 		flex-direction: row;
 	}
-	body.home article.format-standard span.entry-title{
+	body.home article span.entry-title{
 		font-size: 3em;
 	}
-	body.home article.format-standard span.entry-excerpt{
+	body.home article span.entry-excerpt{
 		font-size: 2em;
 	}
-	body.home article.format-standard a.post-edit-link{
+	body.home article a.post-edit-link{
 		font-size: 1.5em;
 	}
 }
@@ -538,7 +579,7 @@ RESPONSIVE
 	.container{
 		width: 900px;
 	}
-	body.home article.format-standard span.entry-title{
+	body.home article span.entry-title{
 		font-size: 3.5em;
 	}
 }
