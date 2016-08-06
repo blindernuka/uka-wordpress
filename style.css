@@ -381,11 +381,15 @@ FOOTER
 
 footer{
 	color: rgba(255,255,255,0.95);
-	font-size: 0.75em;
 }
+
 
 footer.site-footer{
 	background-color: rgba(0,0,0,0.8);
+}
+
+footer.site-footer .credits{
+	font-size: 0.75em;
 }
 
 footer .logo{
@@ -486,7 +490,7 @@ FRAMEWORK
 
 .flex{
 	display: flex;
-	width: 100%;
+	flex-basis: 100%;
 }
 
 .center{
@@ -519,6 +523,10 @@ FRAMEWORK
 
 .container{
 	margin: 0 auto;
+}
+
+.container-fluid{
+	width: 100%;
 }
 
 .row{
@@ -629,7 +637,6 @@ li.menu-item-has-children:focus > ul.sub-menu > li.menu-item-has-children:focus 
 
 @media screen and (min-width: 960px){
 	html{
-		font-size: 18px;
 	}
 	.container{
 		width: 900px;
