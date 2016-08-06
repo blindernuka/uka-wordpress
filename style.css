@@ -186,6 +186,10 @@ li.menu-item{
 	position: relative;
 }
 
+.current-menu-item a{
+	color: #fce100;
+}
+
 .sub-menu{
 	display: none;
 	/*background-color: rgba(255,255,255,0.95);*/
