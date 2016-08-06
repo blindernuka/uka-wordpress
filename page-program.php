@@ -16,7 +16,7 @@ Template Name: Program
 			</header>
 
 			<div class="entry-content">
-				<iframe src="http://blindernuka.no/billett/eventgroup/2" width="100%" height="500" frameborder="0" allowtransparency="true" seamless></iframe>
+				<iframe src="http://blindernuka.no/billett/eventgroup/2" width="100%" height="800" frameborder="0" allowtransparency="true" seamless></iframe>
 			</div>
 			</article>
 		</section>

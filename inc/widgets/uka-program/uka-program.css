@@ -18,6 +18,8 @@
 .widget_uka_program .widget-row{
 	padding: 0.5em;
 	width: auto;
+    display: flex;
+    align-items: center;
 }
 
 .widget_uka_program .widget-row:nth-child(odd){
