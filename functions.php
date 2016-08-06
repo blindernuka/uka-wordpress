@@ -34,6 +34,8 @@ function uka_widgets_init() {
 }
 add_action( 'widgets_init', 'uka_widgets_init' );
 
+
+
 if ( ! function_exists( 'uka_setup' ) ) :
 function uka_setup() {
 	
@@ -55,9 +57,13 @@ function uka_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
 
+	add_theme_support('post-formats', array('link'));
+
 }
 add_action( 'after_setup_theme', 'uka_setup' );
 endif; // uka_setup
+
+
 
 function uka_scripts() {
 
@@ -70,6 +76,8 @@ function uka_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'uka_scripts' );
 
+
+
 /**
  * Widget additions.
  */
@@ -78,15 +86,20 @@ require(get_template_directory().'/inc/widgets/instagram/instagram.php');
 require(get_template_directory().'/inc/widgets/uka-program/uka-program.php');
 require(get_template_directory().'/inc/widgets/uka-program-countdown/uka-program-countdown.php');
 
+
 /**
  * Plugin additions.
  */
 require(get_template_directory().'/inc/plugins/seo/seo.php');
 
+
+
 /**
  * Customizer additions.
  */
 require(get_template_directory().'/inc/customizer.php');
+
+
 
 /**
  * Remove categories
@@ -95,6 +108,8 @@ function uka_remove_categories(){
     register_taxonomy('category', array());
 }
 add_action('init', 'uka_remove_categories');
+
+
 
 /**
  * Remove unused Wordpress widgets
@@ -117,9 +132,7 @@ function uka_remove_widgets(){
 }
 add_action('widgets_init', 'uka_remove_widgets');
 
- 
- 
- 
+
  
 ?>
 
