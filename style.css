@@ -584,7 +584,6 @@ RESPONSIVE
 		font-size: 2em;
 	}
 	body.home article a.post-edit-link{
-		font-size: 1.5em;
 	}
 
 li.menu-item-has-children:hover > ul.sub-menu,
@@ -643,7 +642,7 @@ li.menu-item-has-children:focus > ul.sub-menu > li.menu-item-has-children:focus 
 	html{
 	}
 	.container{
-		width: 900px;
+		width: 848px;
 	}
 	body.home article span.entry-title{
 		font-size: 3.5em;
