@@ -188,7 +188,11 @@ li.menu-item{
 
 .sub-menu{
 	display: none;
-	background-color: rgba(255,255,255,0.95);
+	/*background-color: rgba(255,255,255,0.95);*/
+}
+
+.sub-menu .menu-item {
+    padding-left: 1.75em;
 }
 
 ul.menu > li.menu-item-has-children > a:after{
@@ -199,26 +203,26 @@ ul.menu > li.menu-item-has-children > a:after{
 li.menu-item-has-children:hover > ul.sub-menu,
 li.menu-item-has-children:focus > ul.sub-menu{
 	display: block;
-	position: absolute;
-	min-width: 100%;
+	/*position: relative;
+	min-width: 100%;*/
 }
 
 li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children{
-	display: flex;
+	/*display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: center;*/
 }
 
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children:after{
-	content: " ▸";
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children > a:after{
+	content: " ▾";
 	line-height: 1;
 	padding: 0.5em;
 }
 
 li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children:hover > ul.sub-menu,
 li.menu-item-has-children:focus > ul.sub-menu > li.menu-item-has-children:focus > ul.sub-menu{
-	top: 0;
-	left: 100%;
+	/*top: 0;
+	left: 100%;*/
 }
 
 #menu-main-menu{
@@ -570,6 +574,57 @@ RESPONSIVE
 	body.home article a.post-edit-link{
 		font-size: 1.5em;
 	}
+
+li.menu-item-has-children:hover > ul.sub-menu,
+li.menu-item-has-children:focus > ul.sub-menu{
+	display: block;
+	position: absolute;
+	min-width: 100%;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sub-menu{
+	/*display: none;*/
+	background-color: rgba(255,255,255,0.95);
+}
+
+.sub-menu .menu-item {
+    padding-left: 0;
+}
+
+ul.menu > li.menu-item-has-children > a:after{
+	content: " ▾";
+	line-height: 1;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu,
+li.menu-item-has-children:focus > ul.sub-menu{
+	display: block;
+	position: absolute;
+	min-width: 100%;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children > a:after{
+	content: " ▸";
+}
+
+li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children:hover > ul.sub-menu,
+li.menu-item-has-children:focus > ul.sub-menu > li.menu-item-has-children:focus > ul.sub-menu{
+	top: 0;
+	left: 100%;
+}
+
 }
 
 @media screen and (min-width: 960px){
