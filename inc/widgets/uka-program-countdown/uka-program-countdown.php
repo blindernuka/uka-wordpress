@@ -47,7 +47,7 @@ class UKA_Program_Countdown extends WP_Widget {
 	public function widget( $args, $instance ) {
 
 		$eventgroup = $instance['eventgroup'];
-		$data = $this->get_eventgroup_data($eventgroup);
+		$data = get_eventgroup_data($eventgroup);
 		
 		if ($data['events'][0] !== NULL){
 			
@@ -103,28 +103,6 @@ class UKA_Program_Countdown extends WP_Widget {
 		return $instance;
 	}
 	
-	private function get_eventgroup_data($eventgroup){
-	
-		$API_URL = 'http://blindernuka.no/billett/api/';
-	
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $API_URL.'eventgroup/'.$eventgroup);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_FAILONERROR, true);
-		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, 1000);
-		$jsonData = curl_exec($ch);
-		curl_close($ch);
-		
-		if ($jsonData){
-			return json_decode($jsonData, true);
-		}
-		else{
-			return NULL;
-		}
-		
-	}
-
 
 } // class UKA_Program_Countdown
 
