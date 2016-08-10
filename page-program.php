@@ -68,8 +68,8 @@ Template Name: Program
 					}
 					echo '<tr class="uka-program-row uka-program-event ">';
 					echo '<td class="event-time">'.strftime('%H:%M', $event['time_start']).'</td>';
-					echo '<td class="event-location">'.$event['location'];
-					echo '</td>';
+					echo '<td class="event-location"><span>'.$event['location'];
+					echo '</span></td>';
 					echo '<td class="event-title">'.$title.'</td>';
 					echo '</tr>';
 				}

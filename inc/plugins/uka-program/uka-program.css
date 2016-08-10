@@ -33,6 +33,7 @@
 table.uka-program td,
 table.uka-program th{
 	padding: 0.5em 0.5em;
+	white-space: nowrap;
 }
 
 table.uka-program th{
@@ -59,12 +60,11 @@ table.uka-program th{
 }
 
 .event-time{
-	/*flex-basis: 0;
-    flex-grow: 0;
-    flex-shrink: 0;*/
 }
-.event-title{
+
+.uka-program .event-title{
 	width: 100%;
+	white-space: normal;
 }
 
 @media screen and (min-width: 600px){
