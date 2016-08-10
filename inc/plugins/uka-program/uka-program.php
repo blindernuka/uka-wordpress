@@ -56,7 +56,7 @@ function get_eventgroup_data($eventgroup){
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_FAILONERROR, true);
-	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, 2000L);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 2);
 	$jsonData = curl_exec($ch);
 	curl_close($ch);
 	
