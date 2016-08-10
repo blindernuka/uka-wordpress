@@ -45,13 +45,15 @@ class UKA_Program_Countdown extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-
-		$eventgroup = $instance['eventgroup'];
-		$data = get_eventgroup_data($eventgroup);
+	
+		global $program;
+	
+		//$eventgroup = $instance['eventgroup'];
+		//$data = get_eventgroup_data($eventgroup);
 		
-		if ($data['events'][0] !== NULL){
+		if ($program['events'][0] !== NULL){
 			
-			$first = $data['events'][0]['time_start'];
+			$first = $program['events'][0]['time_start'];
 			
 			if (strtotime('midnight', $first) > strtotime('today')){
 				

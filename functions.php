@@ -57,22 +57,18 @@ function uka_scripts(){
 add_action('wp_enqueue_scripts', 'uka_scripts');
 
 
-
-/**
- * Widget additions.
- */
-require(get_template_directory().'/inc/widgets/social-icons/social-icons.php');
-require(get_template_directory().'/inc/widgets/instagram/instagram.php');
-require(get_template_directory().'/inc/widgets/uka-program/uka-program.php');
-require(get_template_directory().'/inc/widgets/uka-program-countdown/uka-program-countdown.php');
-
-
 /**
  * Plugin additions.
  */
 require(get_template_directory().'/inc/plugins/seo/seo.php');
+require(get_template_directory().'/inc/plugins/uka-program/uka-program.php');
 
-
+/**
+ * Widget additions.
+ */
+ 
+require(get_template_directory().'/inc/widgets/social-icons/social-icons.php');
+require(get_template_directory().'/inc/widgets/instagram/instagram.php');
 
 /**
  * Customizer additions.
@@ -112,28 +108,6 @@ function uka_remove_widgets(){
 }
 add_action('widgets_init', 'uka_remove_widgets');
 
-
-function get_eventgroup_data($eventgroup){
-
-	$API_URL = 'http://blindernuka.no/billett/api/';
-
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $API_URL.'eventgroup/'.$eventgroup);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_FAILONERROR, true);
-	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, 1000);
-	$jsonData = curl_exec($ch);
-	curl_close($ch);
-	
-	if ($jsonData){
-		return json_decode($jsonData, true);
-	}
-	else{
-		return NULL;
-	}
-	
-}
  
 ?>
 

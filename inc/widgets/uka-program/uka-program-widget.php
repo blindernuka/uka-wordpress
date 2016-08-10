@@ -14,15 +14,13 @@ if ( !defined('ABSPATH') )
 	
 add_action( 'widgets_init', function(){
 	register_widget( 'UKA_Program' );
-	wp_enqueue_style('uka-program-style', get_template_directory_uri().'/inc/widgets/uka-program/uka-program.css');
 });	
 
 /**
  * Adds UKA Program widget.
  */
 class UKA_Program extends WP_Widget {
-
-
+	
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -30,7 +28,7 @@ class UKA_Program extends WP_Widget {
 		parent::__construct(
 			'UKA_Program', 			// Base ID
 			__('UKA Program', 'uka'), 	// Name
-			array( 'description' => __( 'UKA Program widget', 'uka' ), ) // Args
+			array( 'description' => __( 'UKA Program sidebar widget', 'uka' ), ) // Args
 		);
 		
 		//add_action( 'wp_enqueue_scripts', 'uka-program_style' );
@@ -48,61 +46,73 @@ class UKA_Program extends WP_Widget {
 	public function widget( $args, $instance ) {
 
 		echo $args['before_widget'];
-		echo '<div class="widget-uka-program-container">';	
 
-		$eventgroup = $instance['eventgroup'];		
-		$data = get_eventgroup_data($eventgroup);
+		
+		global $program;
 		
 		// day calculated from 0600-0600
 		$today = strtotime('today') + 21600;
 		
 		$day = 0;
 	
-		if ($data === NULL){
-			echo __('Error retrieving eventgroup '.$eventgroup, 'uka');
+		if ($program === NULL){
+			echo __('Error retrieving eventgroup '.$data['id'], 'uka');
 		}
-		else if (count($data['events'] > 0)){
-			foreach ($data['events'] as $key => $event){
-				if (!$day && ($event['time_start']) > $today){
+		else if (count($program['events'] > 0)){
+			echo '<table class="uka-program">';
+			foreach ($program['events'] as $key => $event){
+				
+				if ($day && ($event['time_start'] > $day + 86400)){
+					break;
+				}
+
+				if (($event['time_start']) && ($event['time_start'] > $day + 86400)){
+					if ($day){
+						echo '</tbody>';
+					}
+					//echo '<br>';
 					$day = strtotime('midnight', $event['time_start']) + 21600;
-					echo '<div class="widget-row widget-title flex space-around">';
-					
-					$daythemes = $instance['daythemes'];
-					for ($i = 1; $i <= $daythemes; $i++) {
-						if (isset($instance['daytheme_'.$i]) && isset($instance['daytheme_date_'.$i])){
-							if (strtotime('midnight', $event['time_start']) == strtotime($instance['daytheme_date_'.$i])){
-								$daytheme = $instance['daytheme_'.$i];
-								break;
-							}
+					//echo '<thead>';
+					echo '<thead class="uka-program-row uka-program-header uka-program-daytheme">';
+					echo '<tr>';
+					echo '<th colspan="100%">';
+					echo '<span class="uka-program-daytheme-title">';
+					foreach ($program['daythemes'] as $key => $daytheme){
+						if (strtotime('midnight', $event['time_start']) == $daytheme['date']){
+							echo $daytheme['title'];
+							break;
 						}
 					}
-					if ($daytheme){
-						echo '<span class="uka-program-daytheme">'.$daytheme.'</span><span "class="uka-program-date">'.strftime('%d.%m', $day).'</span>';
-					}
-					else{
-						echo '<span "class="uka-program-date">'.strftime('%e. %B', $day).'</span>';
-					}
-					echo '</div>';
+					echo '</span>';
+					
+					echo '<span class="uka-program-daytheme-date">'.strftime(' %e. %B', $day).'</span>';
+					
+					echo '</th>';
+					echo '</tr>';
+					echo '</thead>';
+					echo '<tbody class="uka-day">';
+					
 				}
 				if (($event['time_start'] > $day) && ($event['time_start'] < $day + 86400)){
 					$title = $event['title'];
 					if ($event['link'] !== NULL){
 						$title = '<a href="'.$event['link'].'">'.$title.'</a>';
 					}
-					echo '<div class="widget-row event"><span class="event-time">'.strftime('%H:%M', $event['time_start']).'</span><span class="spacer"></span><span class="event-title">'.$title.'</span></div>';
-				}
-				if ($day && ($event['time_start'] > $day + 86400)){
-					break;
+					echo '<tr class="uka-program-row uka-program-event ">';
+					echo '<td class="event-time">'.strftime('%H:%M', $event['time_start']).'</td>';
+					echo '<td class="event-title">'.$title.'</td>';
+					echo '</tr>';
 				}
 			}
+			echo '</tbody>';
+			echo '</table>';
 		}
-		else{			
-			echo __('No events in eventgroup '.$eventgroup, 'uka');
+		else{
+			//echo __('No events in eventgroup '.$data['id'], 'uka');
 		}
-		echo '</div>';
+
 		echo $args['after_widget'];
 
-		
 	}
 
 	/**
@@ -119,9 +129,6 @@ class UKA_Program extends WP_Widget {
 		$daythemes = $instance['daythemes'];
 		
 		?>
-		<p><label for="<?php echo $this->get_field_id('eventgroup'); ?>"><?php _e('Eventgroup: '); ?></label>
-		<input class="tiny-text" id="<?php echo $this->get_field_id('eventgroup'); ?>" name="<?php echo $this->get_field_name('eventgroup'); ?>" type="text" value="<?php echo esc_attr($eventgroup); ?>" /></p>
-		
 		<p><label for="<?php echo $this->get_field_id('daythemes'); ?>"><?php _e('Number of daythemes: '); ?></label>
 		<input class="tiny-text" id="<?php echo $this->get_field_id('daythemes'); ?>" name="<?php echo $this->get_field_name('daythemes'); ?>" type="number" step="1" min="1" value="<?php echo $daythemes; ?>" size="3" /></p>
 		
