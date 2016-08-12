@@ -12,7 +12,8 @@
 	<?php ?>	
 	<a class="entry-anchor" href="<?php echo esc_url(get_permalink()); ?>">
 	<?php if (has_post_thumbnail()) : ?>
-		<img class="entry-thumbnail" src="<?php the_post_thumbnail_url() ?>">
+		<?php the_post_thumbnail(); ?>
+		<!--img class="entry-thumbnail" src=""-->
 	<?php else: ?>
 		<img class="entry-thumbnail" src="<?php echo get_template_directory_uri().'/images/'.get_theme_mod('uka_post_ratio').'.png' ?>">
 	<?php endif; ?>

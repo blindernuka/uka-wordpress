@@ -546,14 +546,14 @@ RESPONSIVE
 ********/
 @media screen and (min-width: 480px){
 	html{
-		font-size: 14px;
+		font-size: 20px;
 	}
 }
 
 
 @media screen and (min-width: 600px){
 	html{
-		font-size: 16px;
+		font-size: 20px;
 	}
 	div.header-image img{
 		height: 100px;
@@ -656,6 +656,21 @@ WP FIX
 
 .screen-reader-text{
 	/*display: none;*/
+}
+
+img.size-thumbnail{
+	max-width: 25%;
+	height: auto;
+}
+
+img.size-medium{
+	max-width: 33%;
+	height: auto;
+}
+
+img.size-large{
+	width: 100%;
+	height: auto;
 }
 
 

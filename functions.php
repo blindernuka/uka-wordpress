@@ -14,8 +14,6 @@ function uka_widgets_init(){
 }
 add_action('widgets_init', 'uka_widgets_init');
 
-
-
 if (! function_exists('uka_setup')):
 function uka_setup(){
 	
@@ -35,8 +33,18 @@ function uka_setup(){
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(1200, 9999);
-
+	set_post_thumbnail_size(600, 0);
+	
+	
+	update_option( 'thumbnail_size_w', 150 );
+	update_option( 'thumbnail_size_h', 0 );
+	update_option( 'medium_size_w', 200 );
+	update_option( 'medium_size_h', 0 );
+	//update_option( 'medium_large_size_w', 300 );
+	//update_option( 'medium_large_size_h', 0 );
+	update_option( 'large_size_w', 600 );
+	update_option( 'large_size_h', 0 );
+	
 	add_theme_support('post-formats', array('link'));
 
 }
