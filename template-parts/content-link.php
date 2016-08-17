@@ -18,7 +18,9 @@
 
 	<header class="entry-header">
 		<?php the_title( sprintf( '<span class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_the_content())), '</a></span>' ); ?>
-		<span class="entry-excerpt"><a href="<?php echo esc_url(get_the_content()); ?>"><?php echo get_the_excerpt(); ?></a></span>
+		<?php if (has_excerpt()) : ?>
+			<span class="entry-excerpt"><a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_excerpt(); ?></a></span>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content"></div><!-- .entry-content -->
