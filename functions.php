@@ -52,6 +52,10 @@ add_action('after_setup_theme', 'uka_setup');
 endif; // uka_setup
 
 
+function custom_excerpt_length( $length ) {
+	return 0;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 function uka_scripts(){
 
