@@ -1,0 +1,10 @@
+
+
+.widget_uka_program_day table{
+	border-spacing: 1px;
+}
+.widget_uka_program_day td,
+.widget_uka_program_day th{
+	background-color: white;
+	width: 100%;
+}
