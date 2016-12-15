@@ -1,0 +1,165 @@
+section.widget_uka_program{
+    /*display: flex;*/
+    /*flex-direction: column;
+    flex-wrap: wrap;*/
+    height: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+section.widget_uka_program .uka-program-container{
+    /*margin: 2em 0;*/
+    /* height: 73vh; */
+    display: inline-block;
+}
+
+
+table.uka-program:first-child{
+	margin-left: 2em;
+}
+table.uka-program:last-child{
+	margin-right: 2em;
+}
+
+table.uka-program{
+	border-collapse: collapse;
+	display: inline-block;
+	vertical-align: top;
+	margin: 2em 1em;
+}
+
+
+#uka-program-spacer{
+	width: 100%;
+	display: inline-block;
+}
+
+
+.widget_uka_program{
+	font-size: 1em;
+}
+
+.uka-program-header{
+    font-weight: bold;
+}
+
+.uka-program .spacer{
+	padding: 0 0.25em;
+}
+
+.uka-program a{
+	text-decoration: underline;
+}
+
+.uka-program-row{
+	padding: 0.5em;
+	width: auto;
+}
+
+.uka-day .uka-program-row:nth-child(odd){
+	background-color: rgba(0,0,0,0.05);
+}
+
+.uka-program-day{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.uka-program td,
+table.uka-program th{
+	padding: 0.5em 0.5em;
+	white-space: nowrap;
+}
+
+.uka-program .uka-program-daytheme-title{
+	text-align: left;
+	float: left;
+}
+
+.uka-program .uka-program-daytheme-date{
+	text-align: right;
+	float: right;
+}
+
+.uka-program-daytheme-day{
+	display: none;
+}
+
+.event-location{
+	display: none;
+	text-align: center;
+}
+
+.event-time{
+}
+
+.uka-program .event-title{
+	white-space: normal;
+}
+
+@media screen and (min-width: 600px){
+	.event-location{
+		display: table-cell;
+	}
+	.uka-program-daytheme-day{
+		display: inline;
+	}
+}
+
+/************
+SCROLLBAR
+************/
+
+section.widget_uka_program::-webkit-scrollbar {
+	height: 1vh;
+}
+ 
+section.widget_uka_program::-webkit-scrollbar-track {
+	background-color: rgba(0,0,0,0);
+	color: rgba(0,0,0,0);
+}
+ 
+section.widget_uka_program::-webkit-scrollbar-thumb {
+	background-color: #e73b3c;
+}
+
+
+section.widget_uka_program table.past{
+	opacity: 0.25;
+}
+section.widget_uka_program table.today{}
+section.widget_uka_program table.future{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

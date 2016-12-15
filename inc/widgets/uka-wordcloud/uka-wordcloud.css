@@ -1,0 +1,12 @@
+section.widget_uka_wordcloud{
+	position: relative;
+	height: 94vh;
+}
+
+section.widget_uka_wordcloud > *{
+	position: absolute;
+}
+
+section.widget_uka_wordcloud span{
+	background-color: rgba(0,0,0,0.1);
+}
