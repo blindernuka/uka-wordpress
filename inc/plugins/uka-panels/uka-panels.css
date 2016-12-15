@@ -1,0 +1,8 @@
+section.panel{
+	/*height: 94vh;*
+    */overflow-y: auto;*/
+    white-space: nowrap;
+}
+section.panel > section.widge{
+	height: 100%;
+}
