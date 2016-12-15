@@ -7,28 +7,28 @@
  * @since UKA 1.0
  */
 
-function uka_custom_header() {
-$defaults = array(
-	'default-image'          => '',
-	'width'                  => 0,
-	'height'                 => 0,
-	'flex-height'            => false,
-	'flex-width'             => false,
-	'uploads'                => true,
-	'random-default'         => false,
-	'header-text'            => true,
-	'default-text-color'     => '',
-	'wp-head-callback'       => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
+
+$DEFAULTS = array(
+	'BACKGROUND_COLOR' => '#0C0E1F',
+	'LIGHT_TEXT_COLOR' => '#fcfcfc',
+	'DARK_TEXT_COLOR' => '#030303',
+	'LIGHT_LINK_COLOR' => '#fcfcfc',
+	'DARK_LINK_COLOR' => '#030303',
+	'MENU_BACKGROUND_COLOR' => '#0C0E1F',
+	'JUSTIFY-CONTENT' => 'flex-end',
 );
-add_theme_support('custom-header');
+
+function uka_custom_header() {
+	add_theme_support('custom-header');
 }
 add_action( 'after_setup_theme', 'uka_custom_header');
 
 
 function uka_custom_background(){
-	add_theme_support('custom-background');
+	global $DEFAULTS;
+	$defaults = array(
+		'default-color'	=> $DEFAULTS['BACKGROUND_COLOR']);
+	add_theme_support('custom-background', $defaults);
 }
 add_action( 'after_setup_theme', 'uka_custom_background');
 
@@ -37,6 +37,96 @@ function uka_custom_logo(){
 }
 add_action( 'after_setup_theme', 'uka_custom_logo');
 
+
+function uka_customizer_css(){ 
+	global $DEFAULTS;?>
+	<style type="text/css">
+		section#home{background-image:url(<?php echo header_image(); ?>);}
+		html{color:<?php echo get_theme_mod('dark-text-color', $DEFAULTS['DARK_TEXT_COLOR']); ?>;}
+		a{color:<?php echo get_theme_mod('dark-link-color', $DEFAULTS['DARK_LINK_COLOR']); ?>;}
+		a:visited{color:<?php echo get_theme_mod('dark-link-color', $DEFAULTS['DARK_LINK_COLOR']); ?>;}
+		a:hover{color:<?php echo get_theme_mod('dark-link-color', $DEFAULTS['DARK_LINK_COLOR']); ?>;}
+		nav.main-navigation{color:<?php echo get_theme_mod('light-text-color', $DEFAULTS['LIGHT_TEXT_COLOR']); ?>;}
+		nav.main-navigation{background-color:<?php echo get_theme_mod('menu-background-color', $DEFAULTS['MENU_BACKGROUND_COLOR']); ?>;}
+		nav.main-navigation a{color:<?php echo get_theme_mod('dark-link-color', $DEFAULTS['LIGHT_LINK_COLOR']); ?>;}
+		nav.main-navigation > ul.flex{justify-content:<?php echo get_theme_mod('justify-content', $DEFAULTS['JUSTIFY-CONTENT']); ?>;}
+		div#page article, div#page article a{color:<?php echo get_theme_mod('light-text-color', $DEFAULTS['LIGHT_TEXT_COLOR']); ?>;}
+	</style>
+<?php
+}
+add_action('wp_head', 'uka_customizer_css');
+
+
+function uka_custom_colors($wp_customize){
+	
+	global $DEFAULTS;
+	
+	$wp_customize->add_setting('light-text-color', array('default' => $DEFAULTS['LIGHT_TEXT_COLOR']));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 
+			'light-text-color', 
+			array(
+				'label'    => __( 'Light text color', 'uka' ),
+				'section'  => 'colors',
+				'settings' => 'light-text-color', 
+			)
+		)
+	);
+
+	$wp_customize->add_setting('dark-text-color', array('default' => $DEFAULTS['DARK_TEXT_COLOR']));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 
+			'dark-text-color', 
+			array(
+				'label'    => __( 'Dark text color', 'uka' ),
+				'section'  => 'colors',
+				'settings' => 'dark-text-color', 
+			)
+		)
+	);	
+	
+	$wp_customize->add_setting('light-link-color', array('default' => $DEFAULTS['LIGHT_LINK_COLOR']));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 
+			'light-link-color', 
+			array(
+				'label'    => __( 'Light link color', 'uka' ),
+				'section'  => 'colors',
+				'settings' => 'light-link-color', 
+			)
+		)
+	);	
+	
+	$wp_customize->add_setting('dark-link-color', array('default' => $DEFAULTS['DARK_LINK_COLOR']));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 
+			'dark-link-color', 
+			array(
+				'label'    => __( 'Dark link color', 'uka' ),
+				'section'  => 'colors',
+				'settings' => 'dark-link-color', 
+			)
+		)
+	);	
+	
+	$wp_customize->add_setting('menu-background-color', array('default' => $DEFAULTS['MENU_BACKGROUND_COLOR']));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 
+			'menu-background-color', 
+			array(
+				'label'    => __( 'Menu background color', 'uka' ),
+				'section'  => 'colors',
+				'settings' => 'menu-background-color', 
+			)
+		)
+	);	
+}
+add_action('customize_register', 'uka_custom_colors');
 
 function uka_post_layout_customizer($wp_customize){
 	$wp_customize->add_section(
@@ -129,28 +219,115 @@ function uka_footer_customizer($wp_customize){
 
 }
 add_action('customize_register', 'uka_footer_customizer');
+	
+
+
+function uka_pages($wp_customize){
+	$wp_customize->add_panel(
+		'uka_pages', 
+		array(
+			'title'       => __( 'UKA Pages', 'uka' ),
+			'priority'    => 2000
+		)
+	);
+	
+
+	$wp_customize->add_section(
+		'panel-options', 
+		array(
+			'title'       => 'Panel options',
+			'panel' 	  => 'uka_pages'
+		)
+	);
+	
+	$wp_customize->add_setting('pages');
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'pages',
+			array(
+				'label'          => __( 'Number of pages', 'theme_name' ),
+				'section'        => 'panel-options',
+				'type'           => 'number'
+			)
+		)
+	);
+
+	$pages = intval(get_theme_mod('pages'));
+	if ($pages > 0){			
+		for ($i = 1; $i < $pages + 1; $i++){
+			$title = get_theme_mod('panel-'.$i.'-title');
+			$title = $title == '' ? 'Panel '.$i : 'Panel '.$i.' - '.$title;
+			$wp_customize->add_section(
+				'panel-'.$i, 
+				array(
+					'title'       => $title,
+					'panel' 	  => 'uka_pages'
+				)
+			);
+			
+			$wp_customize->add_setting('panel-'.$i.'-title');
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'panel-'.$i.'-title',
+					array(
+						'label'          => __( 'Title', 'theme_name' ),
+						'section'        => 'panel-'.$i,
+						'type'           => 'text'
+					)
+				)
+			);
+			
+			$wp_customize->add_setting('panel-'.$i.'-background-color', array('default' => '#121628'));
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize, 
+					'panel-'.$i.'-background-color', 
+					array(
+						'label'    => __( 'Background color', 'uka' ),
+						'section'  => 'panel-'.$i,
+						'settings' => 'panel-'.$i.'-background-color', 
+ 					)
+				)
+			);
+		}
+	}
+}
+add_action('customize_register', 'uka_pages');
 
 
 
 
 
+function uka_menu($wp_customize){
+	
+	global $DEFAULTS;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	$wp_customize->add_section(
+		'menu-options', 
+		array(
+			'title'       => 'Menu options',
+			'panel' 	  => 'nav_menus'
+		)
+	);
+	
+	$wp_customize->add_setting('justify-content', array('default' => 1));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'justify-content',
+			array(
+				'label'          => __( 'Justify content', 'uka' ),
+				'section'        => 'menu-options',
+				'type'           => 'select',
+				'choices' 		 => array('flex-start', 'flex-end', 'center', 'space-between', 'space-around'),
+				'settings' 		 => 'justify-content',
+			)
+		)
+	);
+}
+add_action('customize_register', 'uka_menu');
 
 
 

@@ -59,7 +59,7 @@ class Social_Icons extends WP_Widget {
 						break;
 					}
 					if (($i - 1) % $columns === 0){
-						echo '<div class="widget-row flex space-around">';
+						echo '<div class="widget-row">';
 					}
 					echo '<a class="social-icon-anchor widget-item" href="'.$instance['link_'.$i].'" target="_blank"><i class="social-icon '.get_classes($instance['link_'.$i]).'" aria-hidden="true"></i></a>';
 					//echo '<div class="social-icon-container widget-item"><a class="social-icon-anchor widget-item" href="'.$instance['link_'.$i].'" target="_blank"><i class="social-icon '.get_classes($instance['link_'.$i]).'" aria-hidden="true"></i></a></div>';

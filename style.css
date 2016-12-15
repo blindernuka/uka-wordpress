@@ -4,7 +4,7 @@ Theme URI: http://blindernuka.no
 Author: Vegard Andersen
 Author URI: http://github.com/vegarda
 Description: UKA på Blindern
-Version: 0.1
+Version: 0.2
 Text Domain: uka
 */
 
@@ -14,29 +14,18 @@ Text Domain: uka
 
 
 html{
-	background-color: #000d1f;
-	/*background-image: url("/wp-content/themes/uka/images/1920.png");*/
-	background-attachment: fixed;
-	background-position: 50%;
-	
-	/*background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(1350px, #000d1f)), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1354px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
-	background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
-	background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000d1f 1350px), url("/wp-content/themes/uka/images/1920.png") no-repeat, #000d1f;*/
-	
-	/*font-family: Roboto, Verdana;*/
 	font-weight: normal;
-	font-size: 16px;
-	color: #000d1f;
+	font-size: 18px;
 }
 
 body{
 }
 
+/****************
+SCROLLBAR
+*************/
 body::-webkit-scrollbar {
-	width: 0.5em;
+	width: 1vw;
 }
  
 body::-webkit-scrollbar-track {
@@ -45,25 +34,16 @@ body::-webkit-scrollbar-track {
 }
  
 body::-webkit-scrollbar-thumb {
-	background-color: #fce100;
+	background-color: #f9dd32;
 }
 
-/*
-a, p, div, span, h1, h2, h3, h4, h5, h6, body, html{
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
-}
-*/
+
 
 a{
-	/*color: #fce100;*/
-	color: #000d1f;
 	text-decoration: none;
 }
 
 a:hover{
-	color: #fce100;
 }
 
 
@@ -105,71 +85,24 @@ ul{
 
 }
 
+
+
 /*******************
 HEADER
 ********/
 
-header#masthead{
-	/*margin-top: 100px;
-	margin-bottom: 50px;*/
-    /*background-image: url('http://uka.joknuden.no/wp-content/themes/uka/images/logo.png');
-    height: 300px;
-    background-repeat: no-repeat;
-    background-position: 50%;*/
-}
-
-header#masthead ul{
-	/*list-style: none;
-	margin: 0;
-    padding: 0;
-
-    display: flex;
-    justify-content: space-around;*/
-}
-
-header#masthead li{
-	/*display: inline-block;*/
-
-}
-
-header#masthead li a{
-	/*
-	color: #fce100;
-	font-family: 'Comfortaa';
-	font-weight: 300;
-	font-size: 2em;
-	text-decoration: none;
-	text-transform: uppercase;
-	*/
-}
-
-header#masthead li a:hover{
-}
-
-div.header-image{
-	margin: 2em 0;
-}
-
-div.header-image a{
-	display: block;
-	overflow: hidden;
-}
-
-div.header-image img{
-	position: relative;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	transform: translateX(-50%);
-	height: 65px;
-}
 
 
 /*******************
 NAV
 ********/
 
-nav{
+nav.main-navigation{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 6vh;
+	z-index: 100;
 }
 
 ul.menu, ul.sub-menu, li.menu-item{
@@ -177,60 +110,65 @@ ul.menu, ul.sub-menu, li.menu-item{
 }
 
 .menu a{
-	padding: 0.75em;
+	padding: 0 1em;
 	display: inline-block;
 	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 3vh;
+	line-height: 2;
 }
 
-li.menu-item{
-	position: relative;
+nav.main-navigation ul#menu-main-menu{
+	flex-direction: row;
+}
+/*******************
+MAIN
+********/
+
+
+/**********
+HOME
+********/
+
+
+
+section#home{
+	height: 94vh;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
 }
 
-.current-menu-item a{
-	color: #fce100;
+section#home aside.widget-area{
+	width: 250px;
 }
 
-.sub-menu{
-	display: none;
-	/*background-color: rgba(255,255,255,0.95);*/
+section#home aside#home-top-left{
+	position: absolute;
+    bottom: 6vh;
+    left: 0;
 }
 
-.sub-menu .menu-item {
-    padding-left: 1.75em;
+section#home aside#home-top-right{
+	position: absolute;
+    top: 0;
+    right: 0;
 }
 
-ul.menu > li.menu-item-has-children > a:after{
-	content: " ▾";
-	line-height: 1;
+section#home aside#home-bottom-left{
+	position: absolute;
+    bottom: 6vh;
+    left: 0;
 }
 
-li.menu-item-has-children:hover > ul.sub-menu,
-li.menu-item-has-children:focus > ul.sub-menu{
-	display: block;
-	/*position: relative;
-	min-width: 100%;*/
-}
-
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children{
-	/*display: flex;
-	justify-content: space-between;
-	align-items: center;*/
-}
-
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children > a:after{
-	content: " ▾";
-	line-height: 1;
-	padding: 0.5em;
-}
-
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children:hover > ul.sub-menu,
-li.menu-item-has-children:focus > ul.sub-menu > li.menu-item-has-children:focus > ul.sub-menu{
-	/*top: 0;
-	left: 100%;*/
-}
-
-#menu-main-menu{
-	flex-direction: column;
+section#home aside#home-bottom-right{
+	position: absolute;
+    bottom: 6vh;
+    right: 0;
 }
 
 
@@ -245,137 +183,91 @@ main#main{
 /*******************
 ARTICLES
 ********/
-
-article{
-	margin: 1em 0;
+section#news{
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
-section#articles{
-	flex-basis: 0;
-	flex-grow: 1;
-	flex-shrink: 0;
-	min-width: auto;
-}
-
-body.home article{
+section#news article.post{
+    display: inline-block;
+    height: 20em;
+    margin: 2em 1em;
 	position: relative;
-	overflow: hidden;
 }
 
-body.home article header{
+section#news article.post:first-child{
+    margin-left: 2em;
 }
 
-body.home article header.entry-header{
-	color: #fce100;
-	position: absolute;
-	bottom: 0;
-	margin: 1em;
-	max-height: 100%;
-	max-width: 100%;
+section#news article.post:last-child{
+    margin-right: 2em;
 }
 
-body.home article span.entry-title{
+section#news article.post span{
+}
+section#news article.post span.entry-excerpt{
+	display: block;
+}
+section#news article.post span.entry-title{
 	font-size: 2em;
-	font-weight: bold;
 	display: block;
+	font-weight: bold;
 }
 
-body.home article span.entry-title a{
-	text-shadow: 0px 0px 0.25em #000d1f;
+section#news article.post a{
+	color: #e73b3c;
 }
 
-body.home article span.entry-excerpt a{
-	text-shadow: 0px 0px 0.25em #000d1f;
+section#news article.post a.entry-anchor{
+	height: 100%;
+	display: inline-block;
 }
 
-body.home article .entry-excerpt{
-	font-size: 1.25em;
-	font-weight: normal;
+section#news article.post a.entry-anchor img.entry-thumbnail{
+	height: 100%;
+	display: inline-block;
+	min-width: 20em;
+	max-width: calc(100vw - 4em);
 }
 
-body.home article .entry-content{
+section#news article.post header.entry-header{
+	padding: 1em;
 	position: absolute;
 	bottom: 0;
-	display: block;
 }
 
-body.home article .entry-footer{
+section#news article.post footer.entry-footer{
 	position: absolute;
 	top: 0;
-	margin: 1em;
 }
 
 
-body.home article a.entry-anchor{
-	display: block;
-	position: relative;
-	/*height: 100%;
-	width: 100%;*/
-	overflow: hidden;
-	background-color: rgba(255,255,255,0.5);
-	
+section#news::-webkit-scrollbar {
+	height: 1vh;
 }
-
-body.home article a.post-edit-link{
-	font-size: 1.25em;
+ 
+section#news::-webkit-scrollbar-track {
+	background-color: rgba(0,0,0,0);
+	color: rgba(0,0,0,0);
 }
-
-body.home article a{
-	color: #fce100;
-}
-
-body.home article img.entry-thumbnail{
-	height: 100%;
-	width: 100%;
-}
-
-body.single article header,
-body.page article header{
-	text-align: center;
+ 
+section#news::-webkit-scrollbar-thumb {
+	background-color: #f9dd32;
 }
 
 
+/*************
+POSTS
+**/
+section#articles article{
+	width: 50em;
+	margin: 0 auto;
+	margin-top: 4em;
+}
 
 /*******************
 SIDEBAR
 ********/
-
-aside#secondary{
-	flex-basis: 0;
-	flex-grow: 0;
-	flex-shrink: 1;
-	min-width: auto;
-}
-
-aside#secondary ul#menu-social-links{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-aside#secondary ul#menu-social-links a{
-	display: block;
-	height: 50px;
-	width: 50px;
-	margin: 50px auto;
-	font-size: 0;
-}
-
-aside#secondary ul#menu-social-links a[href*="facebook"]{
-	background-color: blue;
-}
-
-aside#secondary ul#menu-social-links a[href*="instagram"]{
-	background-color: brown;
-}
-
-aside#secondary ul#menu-social-links a[href*="snapchat"]{
-	background-color: yellow;
-}
-
-aside#secondary ul#menu-social-links a[href*="youtube"]{
-	background-color: red;
-}
 
 
 /*******************
@@ -383,12 +275,16 @@ FOOTER
 ********/
 
 footer{
-	color: rgba(255,255,255,0.95);
+
 }
 
 
 footer.site-footer{
-	background-color: rgba(0,0,0,0.8);
+	height: 50vh;
+	height: 6vh;
+	background-color: #e73b3c;
+	color: rgba(255,255,255,0.95);
+	margin-bottom: 6vh;
 }
 
 footer.site-footer .credits{
@@ -415,51 +311,18 @@ WIDGETS
 ********/
 
 .widget{
-	margin: 1em 0;
 }
 
 .widget-row{
-	/*
-	display: flex;
-	width: 100%;*/
 }
 
 .widget-item{
-	/*padding: 0.5em;*/
-	/*margin: 0.5em;*/
 }
 
 
 /*******************
 SOCIAL ICON WIDGET
 ********/
-
-a.social-icon-anchor{
-	height: 3em;
-	width: 3em;
-	line-height: 3em;
-	display: block;
-	color: #fce100;
-	background-color: #000d1f;
-	border-radius: 2em;
-	text-align: center;
-}
-
-a.social-icon-anchor:hover{
-	color: rgba(255,255,255,0.95);
-}
-
-i.social-icon{
-	font-size: 2em;
-	display: block;
-	line-height: inherit;
-}
-
-.widget-social-icons-container{
-}
-
-.social-icon-container{
-}
 
 
 
@@ -508,10 +371,6 @@ FRAMEWORK
 	justify-content: space-between;
 }
 
-.page-title{
-	color: #000d1f;
-}
-
 .translucent{
 	background-color: rgba(255,255,255,0.95);
 }
@@ -545,107 +404,17 @@ FRAMEWORK
 RESPONSIVE
 ********/
 @media screen and (min-width: 480px){
-	html{
-		font-size: 20px;
-	}
 }
 
 
 @media screen and (min-width: 600px){
-	html{
-		font-size: 20px;
-	}
-	div.header-image img{
-		height: 100px;
-	}
 }
 
 @media screen and (min-width: 768px){
-	html{
-		font-size: 16px;
-	}
-	
-	div.header-image img{
-		height: 146px;
-	}
-	
-	main#main{
-		flex-direction: row;
-	}
-	
-	#menu-main-menu{
-		flex-direction: row;
-	}
-	body.home article span.entry-title{
-		font-size: 3em;
-	}
-	body.home article span.entry-excerpt{
-		font-size: 2em;
-	}
-	body.home article a.post-edit-link{
-	}
-
-li.menu-item-has-children:hover > ul.sub-menu,
-li.menu-item-has-children:focus > ul.sub-menu{
-	display: block;
-	position: absolute;
-	min-width: 100%;
 }
 
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.sub-menu{
-	/*display: none;*/
-	background-color: rgba(255,255,255,0.95);
-}
-
-.sub-menu .menu-item {
-    padding-left: 0;
-}
-
-ul.menu > li.menu-item-has-children > a:after{
-	content: " ▾";
-	line-height: 1;
-}
-
-li.menu-item-has-children:hover > ul.sub-menu,
-li.menu-item-has-children:focus > ul.sub-menu{
-	display: block;
-	position: absolute;
-	min-width: 100%;
-}
-
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children > a:after{
-	content: " ▸";
-}
-
-li.menu-item-has-children:hover > ul.sub-menu > li.menu-item-has-children:hover > ul.sub-menu,
-li.menu-item-has-children:focus > ul.sub-menu > li.menu-item-has-children:focus > ul.sub-menu{
-	top: 0;
-	left: 100%;
-}
-
-}
 
 @media screen and (min-width: 960px){
-	html{
-	}
-	.container{
-		width: 848px;
-	}
-	body.home article span.entry-title{
-		font-size: 3.5em;
-	}
 }
 
 

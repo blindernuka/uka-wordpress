@@ -34,8 +34,9 @@
 			);
 		?>
 	</footer><!-- .entry-footer -->
-<!/div--><!-- .row -->
-</article><!-- #post-## -->
+<!--/div-->
+</article>
+<!-- content.php -->
 
 
 

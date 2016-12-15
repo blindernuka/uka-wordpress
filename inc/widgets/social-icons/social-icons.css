@@ -1,7 +1,45 @@
-.widget_social_icons a.widget-item{
-	margin: 0.5em;
+
+a.social-icon-anchor{
+	height: 3em;
+	width: 3em;
+	line-height: 3em;
+	display: block;
+	color: #fce100;
+	background-color: #000d1f;
+	border-radius: 2em;
+	text-align: center;
 }
 
+a.social-icon-anchor:hover{
+	color: rgba(255,255,255,0.95);
+}
+
+i.social-icon{
+	font-size: 2em;
+	display: block;
+	line-height: inherit;
+}
+
+.widget-social-icons-container{
+	display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+	height: 100%;
+}
+
+.social-icon-container{
+}
+
+.widget_social_icons{
+	height: 100%;
+}
+
+.widget_social_icons a.widget-item{
+	/*margin: 0.5em;*/
+	margin: 0 auto;
+}
+
+/*
 .widget_social_icons .widget-row:first-child a{
 	margin-top: 0;
 }
@@ -16,3 +54,4 @@
 .widget_social_icons a.widget-item:last-child{
 	margin-right:0;
 }
+*/

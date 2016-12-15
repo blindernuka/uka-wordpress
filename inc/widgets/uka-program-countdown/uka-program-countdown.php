@@ -15,7 +15,7 @@ if ( !defined('ABSPATH') )
 add_action( 'widgets_init', function(){
 	register_widget( 'UKA_Program_Countdown' );
 	wp_enqueue_style('uka-program-countdown-style', get_template_directory_uri().'/inc/widgets/uka-program-countdown/uka-program-countdown.css');
-	wp_enqueue_script('uka-program-countdown-script', get_template_directory_uri().'/inc/widgets/uka-program-countdown/uka-program-countdown.js');
+	wp_enqueue_script('uka-program-countdown-script', get_template_directory_uri().'/inc/widgets/uka-program-countdown/uka-program-countdown.js', array('jquery'));
 });	
 
 /**
@@ -63,10 +63,8 @@ class UKA_Program_Countdown extends WP_Widget {
 				echo '<div id="countdown" class="widget-uka-program-countdown-container" timestamp="'.$time.'">';
 				echo '</div>';
 				echo $args['after_widget'];
-				
 			}
 		}
-		
 	}
 
 	/**

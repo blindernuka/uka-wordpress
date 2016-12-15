@@ -11,14 +11,12 @@ $nav = get_the_posts_pagination(array(
 		) 
 );
 if ($nav != null){
-	echo '<br>';
 	echo '<div class="container row page-navigation-container flex center translucent">';
 	$nav = str_replace('<h2 class="screen-reader-text">A</h2>', '', $nav);
 	echo $nav;
 	echo '</div>';
 }
 ?>
-		<br>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<br>

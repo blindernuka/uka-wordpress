@@ -25,8 +25,11 @@ function startTimer(duration, display) {
     setInterval(countdown, 1000);
 }
 
-window.onload = function (){
-	var timestamp = document.getElementById("countdown").getAttribute("timestamp");
-    var display = document.getElementById('countdown');
-    startTimer(timestamp, display);
-};
+$(document).ready(function (){
+	var countdown = document.getElementById("countdown");
+	if (countdown){
+		var timestamp = countdown.getAttribute("timestamp");
+		var display = document.getElementById('countdown');
+		startTimer(timestamp, display);
+	}
+});
