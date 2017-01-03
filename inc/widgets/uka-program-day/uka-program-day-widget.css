@@ -1,10 +1,28 @@
 
 
+
 .widget_uka_program_day table{
-	border-spacing: 1px;
+	width: auto;
+	border-spacing: 0;
+	margin: 2em;
+	table-layout: auto;
+	
 }
+
 .widget_uka_program_day td,
 .widget_uka_program_day th{
-	background-color: white;
+	background-color: #fcfcfc;
+	padding: 0.5em;
+}
+
+.widget_uka_program_day td.event-title{
 	width: 100%;
+}
+
+.widget_uka_program_day td.event-time{
+	text-align: center;
+}
+
+@media (max-width: 600px){
+	
 }

@@ -52,59 +52,74 @@ class UKA_Program_Day extends WP_Widget {
 		// day calculated from 0600-0600
 		$today = strtotime('today') + 21600;
 		
+		// the day of the event in loop
 		$day = 0;
+		$events = 0;
 	
 		if ($program === NULL){
-			echo __('Error retrieving eventgroup '.$data['id'], 'uka');
+			//echo __('Error retrieving eventgroup '.$data['id'], 'uka');
 		}
 		else if (count($program['events'] > 0)){
-			echo '<table class="uka-program-day-day">';
 			foreach ($program['events'] as $key => $event){
 				
-				if ($day && ($event['time_start'] > $day + 86400)){
+				if ($event['time_start'] && ($event['time_start'] >= $today) && ($event['time_start'] < $today + 86400)){
+					
+				}
+				
+				if ($day && ($event['time_start'] > $today + 86400)){
+					if ($events > 0){
+						echo '</tbody>';
+						echo '</table>';
+					}
 					break;
 				}
 
+				// new day
 				if (($event['time_start']) && ($event['time_start'] > $day + 86400)){
-					if ($day){
-						echo '</tbody>';
-					}
-					//echo '<br>';
+					
 					$day = strtotime('midnight', $event['time_start']) + 21600;
-					//echo '<thead>';
-					echo '<thead class="uka-program-day-row uka-program-day-header uka-program-day-daytheme">';
-					echo '<tr>';
-					echo '<th colspan="100%">';
-					echo '<span class="uka-program-day-daytheme-title">';
-					foreach ($program['daythemes'] as $key => $daytheme){
-						if (strtotime('midnight', $event['time_start']) == $daytheme['date']){
-							echo $daytheme['title'];
-							break;
+					
+					if (($event['time_start'] > $today) && ($event['time_start'] < $today + 86400)){
+						echo '<table class="uka-program-day">';
+						echo '<thead class="uka-program-header uka-program-daytheme">';
+						echo '<tr class="uka-program-row">';
+						echo '<th colspan="3">';
+						echo '<span class="uka-program-day-daytheme-title">';
+						foreach ($program['daythemes'] as $key => $daytheme){
+							if (strtotime('midnight', $day) == $daytheme['date']){
+								echo $daytheme['title'];
+								break;
+							}
 						}
+						echo '</span>';
+						
+						echo '<span class="uka-program-day-daytheme-date">'.strftime(' %e. %B', $day).'</span>';
+						
+						echo '</th>';
+						echo '</tr>';
+						echo '</thead>';
+						echo '<tbody class="uka-day">';
 					}
-					echo '</span>';
-					
-					echo '<span class="uka-program-day-daytheme-date">'.strftime(' %e. %B', $day).'</span>';
-					
-					echo '</th>';
-					echo '</tr>';
-					echo '</thead>';
-					echo '<tbody class="uka-day">';
 					
 				}
-				if (($event['time_start'] > $day) && ($event['time_start'] < $day + 86400)){
+				
+				if (($event['time_start'] > $today) && ($event['time_start'] < $today + 86400)){
+					$events++;
 					$title = $event['title'];
 					if ($event['link'] !== NULL){
 						$title = '<a href="'.$event['link'].'">'.$title.'</a>';
 					}
-					echo '<tr class="uka-program-day-row uka-program-day-event ">';
+					$ticket = $event['web_selling_status'];
+					if ($ticket == "sale" || $ticket == "old"){
+						$title = $title.'<a class="event-ticket" href="https://billett.blindernuka.no/billett/event/'.$event['id'].'" target="_blank"><i class="fa fa-ticket" aria-hidden="true"></i></a>';
+					}
+					echo '<tr class="uka-program-row uka-program-event ">';
 					echo '<td class="event-time">'.strftime('%H:%M', $event['time_start']).'</td>';
 					echo '<td class="event-title">'.$title.'</td>';
+					echo '</td>';
 					echo '</tr>';
 				}
 			}
-			echo '</tbody>';
-			echo '</table>';
 		}
 		else{
 			//echo __('No events in eventgroup '.$data['id'], 'uka');
