@@ -2,7 +2,17 @@ section.panel{
 	/*height: 94vh;*
     */overflow-y: auto;*/
     white-space: nowrap;
+	box-shadow: inset 0 0 2em 0px rgba(0, 0, 0, 0.1);
 }
-section.panel > section.widge{
-	height: 100%;
+
+section.panel > section.widget{
+	/*height: 100%;*/
+}
+
+section.panel h1.widget-title{
+	display: inline-block;
+    margin-top: 0.666667em;
+    margin-left: 0.666667em;
+	text-transform: uppercase;
+	line-height: 1em;
 }

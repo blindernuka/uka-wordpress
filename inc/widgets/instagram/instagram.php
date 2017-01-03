@@ -4,7 +4,7 @@ Plugin Name: Instagram
 Plugin URI: 
 Description: Instagram
 Author: Vegard Andersen
-Version: 0.1
+Version: 0.2
 Author URI: http://github.com/vegarda
 */
 
@@ -62,7 +62,7 @@ class Instagram extends WP_Widget {
 					break;
 				}
 				if ($key % $columns === 0){
-					echo '<div class="widget-row flex space-around">';
+					echo '<div class="widget-row flex center">';
 				}
 				echo '<a href="'.$image['link'].'" target="_blank" class="widget-item"><img class="instagram-image size'.$size.'" src="'.$image['images']['thumbnail']['url'].'"></a>';
 				if (($key + 1) % $columns === 0){

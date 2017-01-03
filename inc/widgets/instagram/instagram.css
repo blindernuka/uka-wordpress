@@ -19,7 +19,7 @@
 }
 
 .widget_instagram a.widget-item{
-	margin: 0.5em;
+	margin: 1em;
 }
 
 .widget_instagram .widget-row:first-child a{
@@ -36,3 +36,30 @@
 .widget_instagram a.widget-item:last-child{
 	margin-right:0;
 }
+
+
+
+/*
+.widget-instagram-container{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+*/
+
+.widget-instagram-container a{
+	background-color: black;
+}
+
+.instagram-image{
+}
+.instagram-image:hover{
+	opacity: 0.75;
+}
+
+
+
+
+
+
