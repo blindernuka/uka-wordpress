@@ -43,13 +43,10 @@ class UKA_Program extends WP_Widget {
 	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
 	 */
-	public function widget( $args, $instance ) {
+	public function widget($args, $instance){
 
 		echo $args['before_widget'];
-		
-		//echo '<div class="widget-container uka-program-container">';
-
-		
+				
 		global $program;
 		
 		// day calculated from 0600-0600
@@ -79,12 +76,12 @@ class UKA_Program extends WP_Widget {
 					}
 					
 					echo '<table class="uka-program '.$class.'">';
-					echo '<thead class="uka-program-row uka-program-header uka-program-daytheme">';
-					echo '<tr>';
-					echo '<th colspan="100%">';
+					echo '<thead class="uka-program-header uka-program-daytheme">';
+					echo '<tr class="uka-program-row">';
+					echo '<th colspan="3">';
 					echo '<span class="uka-program-daytheme-title">';
 					foreach ($program['daythemes'] as $key => $daytheme){
-						if (strtotime('midnight', $event['time_start']) == $daytheme['date']){
+						if (strtotime('midnight', $day) == $daytheme['date']){
 							echo $daytheme['title'];
 							break;
 						}
@@ -104,15 +101,12 @@ class UKA_Program extends WP_Widget {
 					if ($event['link'] !== NULL){
 						$title = '<a href="'.$event['link'].'">'.$title.'</a>';
 					}
+					$ticket = $event['web_selling_status'];
+					if ($ticket == "sale" || $ticket == "old"){
+						$title = $title.'<a class="event-ticket" href="https://billett.blindernuka.no/billett/event/'.$event['id'].'" target="_blank"><i class="fa fa-ticket" aria-hidden="true"></i></a>';
+					}
 					echo '<tr class="uka-program-row uka-program-event ">';
 					echo '<td class="event-title">'.$title.'</td>';
-					$ticket = $event['web_selling_status'];
-					echo '<td class="event-ticket">';
-					if ($ticket == "sale" || $ticket == "old"){
-						echo '<a href="https://billett.blindernuka.no/billett/event/'.$event['id'].'" target="_blank">';
-						echo '<i class="fa fa-ticket" aria-hidden="true"></i></a>';
-					}
-					echo '</td>';
 					echo '<td class="event-time">'.strftime('%H:%M', $event['time_start']).'</td>';
 					echo '<td class="event-location">'.$location.'</td>';
 					echo '</tr>';

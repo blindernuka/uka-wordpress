@@ -27,8 +27,16 @@ table.uka-program{
 	display: inline-block;
 	vertical-align: top;
 	margin: 2em 1em;
+	table-layout: auto;
 }
 
+table.uka-program tbody.uka-day{
+	box-shadow: 0px 0px 1em 0em rgba(0, 0, 0, 0.1);
+}
+
+table.uka-program th{
+	font-weight: inherit;
+}
 
 #uka-program-spacer{
 	width: 100%;
@@ -41,7 +49,8 @@ table.uka-program{
 }
 
 .uka-program-header{
-    font-weight: bold;
+    font-weight: lighter;
+    font-weight: 100;
 }
 
 .uka-program .spacer{
@@ -57,8 +66,22 @@ table.uka-program{
 	width: auto;
 }
 
+thead.uka-program-header .uka-program-row{
+	/*background-color: rgba(0,0,0,0.05);
+	background-color: #2a6f8a;
+	color: #e6e6e6;*/
+}
+
 .uka-day .uka-program-row:nth-child(odd){
 	background-color: rgba(0,0,0,0.05);
+	background-color: #7ec9dd;
+	color: #2a6f8a;
+}
+
+.uka-day .uka-program-row:nth-child(even){
+	background-color: rgba(0,0,0,0.05);
+	background-color: #2a6f8a;
+	color: #e6e6e6;
 }
 
 .uka-program-day{
@@ -92,6 +115,10 @@ table.uka-program th{
 }
 
 .event-time{
+}
+
+.event-ticket{
+	margin-left: 1em;
 }
 
 .uka-program .event-title{
