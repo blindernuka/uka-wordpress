@@ -1,6 +1,7 @@
 section.widget_uka_wordcloud{
 	position: relative;
 	height: 94vh;
+	height: calc(94vh - 5em);
 }
 
 section.widget_uka_wordcloud > *{
