@@ -35,23 +35,33 @@ i.social-icon{
 }
 
 .widget_social_icons a.widget-item{
-	/*margin: 0.5em;*/
-	margin: 0 auto;
+	margin: 1em auto;
 }
 
-/*
-.widget_social_icons .widget-row:first-child a{
-	margin-top: 0;
+@media (min-width: 601px){
+	.widget_social_icons .widget-row:first-child a{
+		margin-top: 0;
+	}
+
+	.widget_social_icons .widget-row:last-child a{
+		margin-bottom: 0;
+	}
+
+	/*
+	.widget_social_icons a.widget-item:first-child{
+		margin-left: 0;
+	}
+	.widget_social_icons a.widget-item:last-child{
+		margin-right:0;
+	}
+	*/
 }
 
-.widget_social_icons .widget-row:last-child a{
-	margin-bottom: 0;
+@media (max-width: 600px){
+	.widget-social-icons-container{
+		flex-direction: row;
+	}
+	.widget_social_icons a.widget-item {
+		margin: 1em;
+	}
 }
-
-.widget_social_icons a.widget-item:first-child{
-	margin-left: 0;
-}
-.widget_social_icons a.widget-item:last-child{
-	margin-right:0;
-}
-*/
