@@ -4,21 +4,35 @@ Theme URI: http://blindernuka.no
 Author: Vegard Andersen
 Author URI: http://github.com/vegarda
 Description: UKA på Blindern
-Version: 0.2
+Version: 2.0
 Text Domain: uka
 */
 
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700';
-@import 'https://fonts.googleapis.com/css?family=Comfortaa:300,400,700';
-@import 'https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,700';
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 
 html{
+	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 	font-size: 18px;
 }
 
 body{
+	height: 88vh;
+}
+
+a,
+a:visited,
+a:hover,
+a:link,
+a:active{
+	/*color: inherit;*/
 }
 
 /****************
@@ -30,11 +44,10 @@ body::-webkit-scrollbar {
  
 body::-webkit-scrollbar-track {
 	background-color: rgba(0,0,0,0);
-	color: rgba(0,0,0,0);
 }
  
 body::-webkit-scrollbar-thumb {
-	background-color: #f9dd32;
+	background-color: #fcfcfc;
 }
 
 
@@ -42,10 +55,6 @@ body::-webkit-scrollbar-thumb {
 a{
 	text-decoration: none;
 }
-
-a:hover{
-}
-
 
 a img{
 	display: block;
@@ -78,7 +87,7 @@ ul{
 }
 
 #page{
-	overflow: auto;
+	/*overflow: auto;*/
 }
 
 .site-inner{
@@ -102,17 +111,24 @@ nav.main-navigation{
 	bottom: 0;
 	width: 100%;
 	height: 6vh;
-	z-index: 100;
+	z-index: 1000;
+	box-shadow: 0em 0em 1em 0em rgba(0, 0, 0, 0.5);
 }
 
-ul.menu, ul.sub-menu, li.menu-item{
+nav.main-navigation li.menu-item{
+}
+
+ul.menu, 
+ul.sub-menu, 
+li.menu-item{
 	z-index: 10;
 }
 
 .menu a{
 	padding: 0 1em;
 	display: inline-block;
-	font-weight: bold;
+	font-weight: lighter;
+	font-weight: 100;
 	text-transform: uppercase;
 	font-size: 3vh;
 	line-height: 2;
@@ -121,6 +137,21 @@ ul.menu, ul.sub-menu, li.menu-item{
 nav.main-navigation ul#menu-main-menu{
 	flex-direction: row;
 }
+
+nav.main-navigation li.menu-item-has-children ul.sub-menu{
+	display: none;
+}
+nav.main-navigation li.menu-item-has-children:hover ul.sub-menu{
+	display: block;
+	position: absolute;
+	bottom: 100%;
+}
+
+nav.main-navigation li.menu-item-has-children:last-child ul.sub-menu{
+	    right: 0;
+}
+
+
 /*******************
 MAIN
 ********/
@@ -144,7 +175,10 @@ section#home{
 }
 
 section#home aside.widget-area{
-	width: 250px;
+	/*width: 350px;*/
+}
+section#home aside.widget-area section.widget{
+	margin: 2em;
 }
 
 section#home aside#home-top-left{
@@ -180,90 +214,11 @@ main#main{
 	flex-direction: column;
 }
 
-/*******************
-ARTICLES
-********/
-section#news{
-    overflow-x: auto;
-    white-space: nowrap;
+main#page{
+	min-height: calc(94% - 12em);
+	padding-bottom: 12em;
 }
 
-section#news article.post{
-    display: inline-block;
-    height: 20em;
-    margin: 2em 1em;
-	position: relative;
-}
-
-section#news article.post:first-child{
-    margin-left: 2em;
-}
-
-section#news article.post:last-child{
-    margin-right: 2em;
-}
-
-section#news article.post span{
-}
-section#news article.post span.entry-excerpt{
-	display: block;
-}
-section#news article.post span.entry-title{
-	font-size: 2em;
-	display: block;
-	font-weight: bold;
-}
-
-section#news article.post a{
-	color: #e73b3c;
-}
-
-section#news article.post a.entry-anchor{
-	height: 100%;
-	display: inline-block;
-}
-
-section#news article.post a.entry-anchor img.entry-thumbnail{
-	height: 100%;
-	display: inline-block;
-	min-width: 20em;
-	max-width: calc(100vw - 4em);
-}
-
-section#news article.post header.entry-header{
-	padding: 1em;
-	position: absolute;
-	bottom: 0;
-}
-
-section#news article.post footer.entry-footer{
-	position: absolute;
-	top: 0;
-}
-
-
-section#news::-webkit-scrollbar {
-	height: 1vh;
-}
- 
-section#news::-webkit-scrollbar-track {
-	background-color: rgba(0,0,0,0);
-	color: rgba(0,0,0,0);
-}
- 
-section#news::-webkit-scrollbar-thumb {
-	background-color: #f9dd32;
-}
-
-
-/*************
-POSTS
-**/
-section#articles article{
-	width: 50em;
-	margin: 0 auto;
-	margin-top: 4em;
-}
 
 /*******************
 SIDEBAR
@@ -280,11 +235,14 @@ footer{
 
 
 footer.site-footer{
-	height: 50vh;
-	height: 6vh;
+	position: relative;
+	margin-top: -12em; /* negative value of footer height */
+	min-height: 12em;
+	clear: both;
 	background-color: #e73b3c;
-	color: rgba(255,255,255,0.95);
 	margin-bottom: 6vh;
+	position: relative;
+	width: 100%;
 }
 
 footer.site-footer .credits{
@@ -329,25 +287,6 @@ SOCIAL ICON WIDGET
 /*******************
 INSTAGRAM WIDGET
 ********/
-
-.widget-instagram-container{
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	flex-direction: row;
-}
-
-.widget-instagram-container a{
-	background-color: black;
-}
-
-.instagram-image{
-	/*height: 100px;
-	width: 100px;*/
-}
-.instagram-image:hover{
-	opacity: 0.75;
-}
 
 
 /*******************
@@ -403,20 +342,41 @@ FRAMEWORK
 /*******************
 RESPONSIVE
 ********/
-@media screen and (min-width: 480px){
+
+@media (max-width: 600px){
+	nav{
+		/* todo */
+		display: none;
+	}
+	html{
+		font-size: 12px;
+	}
+	section#home{
+		min-height: 94vh;
+		height: auto;
+	}
+	section#news article.post {
+		height: 16em;
+	}
+	section#home aside#home-top-left{
+		position: initial;
+	}
+	section#home aside#home-top-right{
+		position: initial;
+	}
+	section#home aside#home-bottom-left{
+		position: initial;
+	}
+	section#home aside#home-bottom-right{
+		position: initial;
+	}
+	section#home aside.widget-area{
+		width: 100%;
+	}
+	footer.site-footer{
+		margin-bottom: 0;
+	}
 }
-
-
-@media screen and (min-width: 600px){
-}
-
-@media screen and (min-width: 768px){
-}
-
-
-@media screen and (min-width: 960px){
-}
-
 
 
 /*******************
