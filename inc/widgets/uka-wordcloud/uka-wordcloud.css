@@ -7,6 +7,6 @@ section.widget_uka_wordcloud > *{
 	position: absolute;
 }
 
-section.widget_uka_wordcloud span{
-	background-color: rgba(0,0,0,0.1);
+section.widget_uka_wordcloud span.word{
+	font-weight: bold;
 }

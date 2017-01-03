@@ -61,7 +61,7 @@ class UKA_Wordcloud extends WP_Widget {
 				if ($weight == ""){
 					$weight = 1;
 				}
-				echo '<span style="display:block;" weight="'.$weight.'">';
+				echo '<span class="word" style="display:block;" weight="'.$weight.'">';
 				echo $word;
 				echo '</span>';
 				if ($url != ""){

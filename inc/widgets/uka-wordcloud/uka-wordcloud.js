@@ -4,7 +4,7 @@
 
 
 
-var lengthUnit = 'vw';
+var lengthUnit = 'vh';
 
 $(document).ready(function(){
 
@@ -29,7 +29,7 @@ $(document).ready(function(){
 		height = wordcloud.offsetHeight*0.8;
 
 		if (width < height){
-			lengthUnit = 'vh';
+			lengthUnit = 'vw';
 		}		
 
 		
