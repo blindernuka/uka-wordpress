@@ -1,0 +1,92 @@
+
+/*******************
+ARTICLES
+********/
+section.widget_uka_news{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+section.widget_uka_news article.post{
+    display: inline-block;
+    height: 20em;
+    margin: 2em 1em;
+	position: relative;
+}
+
+section.widget_uka_news article.post:first-child{
+    margin-left: 2em;
+}
+
+section.widget_uka_news article.post:last-child{
+    margin-right: 2em;
+}
+
+section.widget_uka_news article.post span{
+}
+
+section.widget_uka_news article.post span.entry-excerpt{
+	display: block;
+	font-weight: normal;
+	font-weight: 400;
+}
+
+section.widget_uka_news article.post span.entry-title{
+	font-size: 2em;
+	display: block;
+	font-weight: lighter;
+	font-weight: 100;
+}
+
+section.widget_uka_news article.post header.entry-header a{
+	color: #fcfcfc;
+	background-color: #0c0e1f;
+	padding: 0.25em;	
+}
+
+section.widget_uka_news article.post a.entry-anchor{
+	height: 100%;
+	display: inline-block;
+}
+
+section.widget_uka_news article.post a.entry-anchor img.entry-thumbnail{
+	height: 100%;
+	display: inline-block;
+	max-width: calc(100vw - 4em);
+}
+
+section.widget_uka_news article.post header.entry-header{
+	padding: 1em;
+	position: absolute;
+	bottom: 0;
+}
+
+section.widget_uka_news article.post footer.entry-footer{
+	position: absolute;
+	top: 0;
+	display: none;
+}
+
+
+section.widget_uka_news::-webkit-scrollbar {
+	height: 1vh;
+}
+ 
+section.widget_uka_news::-webkit-scrollbar-track {
+	background-color: rgba(0,0,0,0);
+	color: rgba(0,0,0,0);
+}
+ 
+section.widget_uka_news::-webkit-scrollbar-thumb {
+	background-color: #f9dd32;
+}
+
+
+/*************
+POSTS
+**/
+section#articles article{
+	width: 50em;
+	margin: 0 auto;
+	margin-top: 4em;
+}
