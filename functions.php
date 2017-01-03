@@ -46,7 +46,7 @@ if (! function_exists('uka_setup')):
 	function uka_setup(){
 		
 		date_default_timezone_set('Europe/Oslo');
-		setlocale(LC_ALL, 'nb_NO', 'nb_no', 'nb', 'no', 'norwegian');
+		setlocale(LC_ALL, 'nb_NO', 'nb_no', 'nb', 'no', 'norwegian', 'nb_NO.UTF8');
 		
 		register_nav_menus(array(
 			'main-menu' => __('Main menu', 'uka'),
@@ -116,6 +116,7 @@ require(get_template_directory().'/inc/plugins/uka-panels/uka-panels-plugin.php'
 require(get_template_directory().'/inc/widgets/social-icons/social-icons.php');
 require(get_template_directory().'/inc/widgets/instagram/instagram.php');
 require(get_template_directory().'/inc/widgets/uka-wordcloud/uka-wordcloud-widget.php');
+require(get_template_directory().'/inc/widgets/uka-news/uka-news.php');
 
 /**
  * Customizer additions.
@@ -155,7 +156,14 @@ function uka_remove_widgets(){
 }
 add_action('widgets_init', 'uka_remove_widgets');
 
- 
+
+
+
+function my_function_admin_bar(){
+	return false;
+}
+add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+
 ?>
 
 
