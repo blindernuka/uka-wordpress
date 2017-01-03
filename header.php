@@ -11,7 +11,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
 		
 <?php if ( has_nav_menu( 'main-menu' ) ) : ?>
 	<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'uka' ); ?>">
@@ -24,3 +23,5 @@
 		?>
 	</nav>
 <?php endif; ?>
+
+<main id="page" class="site">
