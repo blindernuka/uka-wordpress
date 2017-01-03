@@ -81,11 +81,7 @@ h4{
 	font-size: 1.5em;
 }
 
-ul{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
+
 
 #page{
 	/*overflow: auto;*/
@@ -123,6 +119,9 @@ ul.menu,
 ul.sub-menu, 
 li.menu-item{
 	z-index: 10;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .menu a{
