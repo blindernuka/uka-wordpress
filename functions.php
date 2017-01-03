@@ -148,7 +148,7 @@ function uka_remove_widgets(){
 	unregister_widget('WP_Widget_Links');
 	unregister_widget('WP_Widget_Meta');
 	unregister_widget('WP_Widget_Search');
-	#unregister_widget('WP_Widget_Text');
+	unregister_widget('WP_Widget_Text');
 	unregister_widget('WP_Widget_Recent_Posts');
 	unregister_widget('WP_Widget_Recent_Comments');
 	unregister_widget('WP_Widget_Tag_Cloud');
@@ -162,7 +162,7 @@ add_action('widgets_init', 'uka_remove_widgets');
 function my_function_admin_bar(){
 	return false;
 }
-add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+//add_filter( 'show_admin_bar' , 'my_function_admin_bar');
 
 ?>
 
