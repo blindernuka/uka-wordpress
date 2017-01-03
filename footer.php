@@ -1,9 +1,12 @@
 		
 
-		</main><!-- #main -->
+		
+		
+</main><!-- #page -->
 
 <?php
 // Previous/next page navigation.
+/*
 $nav = get_the_posts_pagination(array(
         'prev_text'          => __( '&laquo;', 'uka' ),
         'next_text'          => __( '&raquo;', 'uka' ),
@@ -16,36 +19,36 @@ if ($nav != null){
 	echo $nav;
 	echo '</div>';
 }
+*/
 ?>
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<br>
-			<div class="container row flex space-around">
-			
-			<?php if ( get_theme_mod('uka_footer_logo')): ?>
-				<img class="column footer-logo logo" src='<?php echo esc_url( get_theme_mod( 'uka_footer_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-			<?php endif; ?>
-			
-			</div><!-- .container -->
-			
-			<br>
-			
-			<?php if ( get_theme_mod('uka_footer_credits')): ?>
-				<div class="container row flex space-around">
-					<span class="credits"><?php echo get_theme_mod('uka_footer_credits') ?></span>
-				</div><!-- .container -->
-			<?php endif; ?>
-			
-			<?php if ( get_theme_mod('uka_footer_copyright')): ?>
-				<div class="container row flex space-around">
-					<span class="credits"><?php echo '© '.get_theme_mod('uka_footer_copyright').' '.date('Y') ?></span>
-				</div><!-- .container -->
-			<?php endif; ?>
-			
-			<br>
-			
-		</footer><!-- .site-footer -->
-</div><!-- .site -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+	<br>
+	<div class="container row flex space-around">
+	
+	<?php if ( get_theme_mod('uka_footer_logo')): ?>
+		<img class="column footer-logo logo" src='<?php echo esc_url( get_theme_mod( 'uka_footer_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+	<?php endif; ?>
+	
+	</div><!-- .container -->
+	
+	<br>
+	
+	<?php if ( get_theme_mod('uka_footer_credits')): ?>
+		<div class="container row flex space-around">
+			<span class="credits"><?php echo get_theme_mod('uka_footer_credits') ?></span>
+		</div><!-- .container -->
+	<?php endif; ?>
+	
+	<?php if ( get_theme_mod('uka_footer_copyright')): ?>
+		<div class="container row flex space-around">
+			<span class="credits"><?php echo '© '.get_theme_mod('uka_footer_copyright').' '.date('Y') ?></span>
+		</div><!-- .container -->
+	<?php endif; ?>
+	
+	<br>
+	
+</footer><!-- .site-footer -->
 
 <?php wp_footer(); ?>
 </body>
