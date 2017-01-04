@@ -86,6 +86,6 @@ section.widget_uka_news::-webkit-scrollbar-thumb {
 POSTS
 **/
 section#articles article{
-	width: 50em;
+	width: 36em;
 	margin: 4em auto;
 }
