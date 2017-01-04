@@ -61,7 +61,7 @@ if (! function_exists('uka_setup')):
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 		 */
 		add_theme_support('post-thumbnails');
-		set_post_thumbnail_size(648, 0);
+		set_post_thumbnail_size(486, 0);
 		
 		
 		update_option( 'thumbnail_size_w', 162 );
