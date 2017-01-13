@@ -20,6 +20,10 @@ html{
 	font-size: 16px;
 }
 
+html.no-js{
+    margin-top: 0px !important;
+}
+
 body{
 	height: 88vh;
 }
