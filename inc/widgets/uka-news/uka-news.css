@@ -36,12 +36,12 @@ section.widget_uka_news article.post span.entry-title{
 	display: block;
 	font-weight: lighter;
 	font-weight: 100;
+    padding: 0.25em;
+    background-color: #0c0e1f;
 }
 
 section.widget_uka_news article.post header.entry-header a{
 	color: #fcfcfc;
-	background-color: #0c0e1f;
-	padding: 0.25em;	
 }
 
 section.widget_uka_news article.post a.entry-anchor{
