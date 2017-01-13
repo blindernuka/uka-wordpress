@@ -29,6 +29,7 @@ section.widget_uka_news article.post span.entry-excerpt{
 	display: block;
 	font-weight: normal;
 	font-weight: 400;
+	word-break: break-word;
 }
 
 section.widget_uka_news article.post span.entry-title{
@@ -36,6 +37,7 @@ section.widget_uka_news article.post span.entry-title{
 	display: block;
 	font-weight: lighter;
 	font-weight: 100;
+	word-break: break-word;
 }
 
 section.widget_uka_news article.post header.entry-header a{
