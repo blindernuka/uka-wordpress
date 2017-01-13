@@ -14,7 +14,6 @@ $(document).ready(function(){
 
 
 $(document).on("scroll", function(){
-	console.log(window.pageYOffset);
 	if (window.pageYOffset > 0.94*window.innerHeight){
 		$("nav#site-navigation").addClass("nav-fixed");
 	}
