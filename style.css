@@ -10,6 +10,7 @@ Text Domain: uka
 
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
 
 
 html{
@@ -21,6 +22,19 @@ html{
 
 body{
 	height: 88vh;
+}
+
+body.single .entry-content,
+body.post .entry-content,
+body.page .entry-content{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+}
+
+body.single .entry-content a,
+body.post .entry-content a,
+body.page .entry-content a{
+	text-decoration: underline;
 }
 
 a,
@@ -346,6 +360,9 @@ RESPONSIVE
 	}
 	html{
 		font-size: 12px;
+	}
+	body{
+		height: auto;
 	}
 	section#home{
 		min-height: 94vh;
