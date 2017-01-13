@@ -45,8 +45,10 @@ add_action('widgets_init', 'uka_widgets_init');
 if (! function_exists('uka_setup')):
 	function uka_setup(){
 		
+		//define("CHARSET", "utf-8");
 		date_default_timezone_set('Europe/Oslo');
-		setlocale(LC_ALL, 'nb_NO', 'nb_no', 'nb', 'no', 'norwegian', 'nb_NO.UTF8');
+		#setlocale(LC_ALL, 'nb_NO', 'nb_no', 'nb', 'no', 'norwegian', 'nb_NO.UTF-8');
+		setlocale(LC_ALL, 'nb_NO.UTF-8');
 		
 		register_nav_menus(array(
 			'main-menu' => __('Main menu', 'uka'),
