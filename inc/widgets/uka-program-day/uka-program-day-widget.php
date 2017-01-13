@@ -93,7 +93,7 @@ class UKA_Program_Day extends WP_Widget {
 						}
 						echo '</span>';
 						
-						echo '<span class="uka-program-day-daytheme-date">'.strftime(' %e. %B', $day).'</span>';
+						echo '<span class="uka-program-day-daytheme-date">'.strftime('%A %e. %B', $day).'</span>';
 						
 						echo '</th>';
 						echo '</tr>';

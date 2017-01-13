@@ -78,9 +78,17 @@ thead.uka-program-header .uka-program-row{
 	color: #2a6f8a;
 }
 
+.uka-day .uka-program-row:nth-child(odd) a{
+	color: #2a6f8a;
+}
+
 .uka-day .uka-program-row:nth-child(even){
 	background-color: rgba(0,0,0,0.05);
 	background-color: #2a6f8a;
+	color: #e6e6e6;
+}
+
+.uka-day .uka-program-row:nth-child(even) a{
 	color: #e6e6e6;
 }
 
