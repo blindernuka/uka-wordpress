@@ -15,9 +15,9 @@ $(document).ready(function(){
 
 $(document).on("scroll", function(){
 	if (window.pageYOffset > 0.94*window.innerHeight){
-		$("nav#site-navigation").addClass("nav-fixed");
+		$("body.home nav#site-navigation").addClass("nav-fixed");
 	}
 	else{
-		$("nav#site-navigation").removeClass("nav-fixed");
+		$("body.home nav#site-navigation").removeClass("nav-fixed");
 	}
 });
