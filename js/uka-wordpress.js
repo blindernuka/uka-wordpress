@@ -14,6 +14,12 @@ $(document).ready(function(){
 
 
 $(document).on("scroll", function(){
+	if (window.pageYOffset > 0.5*window.innerHeight){
+		$("body.home nav#site-navigation").addClass("dropdown");
+	}
+	else{
+		$("body.home nav#site-navigation").removeClass("dropdown");	
+	}
 	if (window.pageYOffset > 0.94*window.innerHeight){
 		$("body.home nav#site-navigation").addClass("nav-fixed");
 	}

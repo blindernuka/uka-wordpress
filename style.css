@@ -123,6 +123,7 @@ body.home nav.main-navigation{
 }
 
 nav.main-navigation{
+	text-align: end;
 	width: 100%;
 	height: 6vh;
 	z-index: 1000;
@@ -149,6 +150,11 @@ li.menu-item{
 	text-transform: uppercase;
 	font-size: 3vh;
 	line-height: 2;
+	white-space: nowrap;
+}
+
+nav.main-navigation li.menu-item-has-children{
+	position: relative;
 }
 
 nav.main-navigation ul#menu-main-menu{
@@ -157,20 +163,23 @@ nav.main-navigation ul#menu-main-menu{
 
 nav.main-navigation li.menu-item-has-children ul.sub-menu{
 	display: none;
+	position: absolute;
+	bottom: 100%;
+    right: 0;
 }
 
 nav.main-navigation li.menu-item-has-children:hover ul.sub-menu{
-	display: block;
-	position: absolute;
-	bottom: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 nav.main-navigation.nav-fixed li.menu-item-has-children:hover ul.sub-menu{
-	bottom: inherit;
+	
 }
 
-nav.main-navigation li.menu-item-has-children:last-child ul.sub-menu{
-	right: 0;
+nav#site-navigation.dropdown ul.sub-menu{
+	flex-direction: column-reverse;
+	bottom: inherit;
 }
 
 nav#site-navigation.nav-fixed{
