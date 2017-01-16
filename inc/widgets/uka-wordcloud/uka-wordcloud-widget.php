@@ -56,7 +56,7 @@ class UKA_Wordcloud extends WP_Widget {
 			$url = $instance['word_url_'.$i];
 			if ($word != ""){				
 				if ($url != ""){
-					echo '<a id="word-'.$i.'" href="'.$url.'" word="'.$i.'">';
+					echo '<a id="word-'.$i.'" href="'.$url.'" weight="'.$weight.'">';
 				}
 				if ($weight == ""){
 					$weight = 1;

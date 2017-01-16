@@ -87,7 +87,7 @@ $(document).ready(function(){
 				break;
 			}
 			
-			if (k < maxTries){				
+			if (k < maxTries){
 				word.style.left = (marginLeft+randomLeft)*100/wordcloud.offsetWidth + '%';
 				word.style.top = (marginTop+randomTop)*100/wordcloud.offsetHeight + '%';
 				placements.push(word);
