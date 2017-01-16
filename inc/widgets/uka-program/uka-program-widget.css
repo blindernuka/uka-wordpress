@@ -147,7 +147,7 @@ SCROLLBAR
 ************/
 
 section.widget_uka_program::-webkit-scrollbar {
-	height: 1vh;
+	height: 0.25em;
 }
  
 section.widget_uka_program::-webkit-scrollbar-track {

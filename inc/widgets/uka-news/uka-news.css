@@ -75,7 +75,7 @@ section.widget_uka_news article.post footer.entry-footer{
 
 
 section.widget_uka_news::-webkit-scrollbar {
-	height: 1vh;
+	height: 0.25em;
 }
  
 section.widget_uka_news::-webkit-scrollbar-track {
