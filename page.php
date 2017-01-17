@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 
 <?php if ( has_nav_menu( 'main-menu' ) ) : ?>
-	<nav id="site-navigation" class="main-navigation nav-fixed" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'uka' ); ?>">
+	<nav id="site-navigation" class="main-navigation nav-fixed dropdown" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'uka' ); ?>">
 	<?php
 			wp_nav_menu(array(
 				'theme_location' => 'main-menu',
