@@ -56,12 +56,17 @@ class UKA_Program extends WP_Widget {
 		$day = 0;
 		
 		if ($program === NULL){
-			echo __('Error retrieving eventgroup '.$data['id'], 'uka');
+			//echo __('Error retrieving eventgroup '.$data['id'], 'uka');
 		}
 		else if (count($program['events'] > 0)){
 			foreach ($program['events'] as $key => $event){
 
 				if (($event['time_start']) && ($event['time_start'] > $day + 86400)){
+					
+					// close previous table
+					if ($day > 0){
+						echo '</table>';
+					}
 					
 					$day = strtotime('midnight', $event['time_start']) + 21600;
 					
@@ -74,6 +79,7 @@ class UKA_Program extends WP_Widget {
 					else{
 						$class = "future";
 					}
+					
 					
 					echo '<table class="uka-program '.$class.'">';
 					echo '<thead class="uka-program-header uka-program-daytheme">';
