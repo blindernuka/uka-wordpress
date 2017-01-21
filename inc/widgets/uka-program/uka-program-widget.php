@@ -103,7 +103,7 @@ class UKA_Program extends WP_Widget {
 					}
 					$ticket = $event['web_selling_status'];
 					if ($ticket == "sale" || $ticket == "old"){
-						$title = $title.'<a class="event-ticket" href="https://billett.blindernuka.no/billett/event/'.$event['id'].'" target="_blank"><i class="fa fa-ticket" aria-hidden="true"></i></a>';
+						$title = $title.'<a class="event-ticket" href="https://billett.blindernuka.no/event/'.$event['id'].'" target="_blank"><i class="fa fa-ticket" aria-hidden="true"></i></a>';
 					}
 					echo '<tr class="uka-program-row uka-program-event ">';
 					echo '<td class="event-title">'.$title.'</td>';
