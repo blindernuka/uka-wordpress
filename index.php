@@ -32,19 +32,21 @@
 	</aside>
 <?php endif; ?>
 
-	<?php if ( has_nav_menu( 'main-menu' ) ) : ?>
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'uka' ); ?>">
-		<?php
-				wp_nav_menu(array(
-					'theme_location' => 'main-menu',
-					'menu_class'     => 'menu flex',
-					'container' => false,
-				 ) );
-			?>
-		</nav>
-	<?php endif; ?>
+
 
 </section>
+
+<?php if ( has_nav_menu( 'main-menu' ) ) : ?>
+	<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'uka' ); ?>">
+	<?php
+			wp_nav_menu(array(
+				'theme_location' => 'main-menu',
+				'menu_class'     => 'menu flex',
+				'container' => false,
+			 ) );
+		?>
+	</nav>
+<?php endif; ?>
 
 <?php
 	$panels = intval(get_theme_mod('panels'));

@@ -390,8 +390,11 @@ RESPONSIVE
 		height: auto;
 	}
 	section#home{
-		min-height: 94vh;
+		min-height: 200vh;
 		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 	section#news article.post {
 		height: 16em;
