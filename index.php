@@ -38,6 +38,7 @@
 
 <?php if ( has_nav_menu( 'main-menu' ) ) : ?>
 	<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'uka' ); ?>">
+	<i class="fa fa-bars hamburger" aria-hidden="true"></i>
 	<?php
 			wp_nav_menu(array(
 				'theme_location' => 'main-menu',

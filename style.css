@@ -117,12 +117,12 @@ HEADER
 NAV
 ********/
 
-body.home nav.main-navigation{
+nav#site-navigation{
 	position: absolute;
 	bottom: 0;
 }
 
-nav.main-navigation{
+nav#site-navigation{
 	text-align: end;
 	width: 100%;
 	height: 3em;
@@ -130,7 +130,11 @@ nav.main-navigation{
 	box-shadow: 0em 0em 1em 0em rgba(0, 0, 0, 1);
 }
 
-nav.main-navigation li.menu-item{
+nav#site-navigation .hamburger{
+	display: none;
+}
+
+nav#site-navigation li.menu-item{
 }
 
 ul.menu, 
@@ -153,27 +157,27 @@ li.menu-item{
 	white-space: nowrap;
 }
 
-nav.main-navigation li.menu-item-has-children{
+nav#site-navigation li.menu-item-has-children{
 	position: relative;
 }
 
-nav.main-navigation ul#menu-main-menu{
+nav#site-navigation ul#menu-main-menu{
 	flex-direction: row;
 }
 
-nav.main-navigation li.menu-item-has-children ul.sub-menu{
+nav#site-navigation li.menu-item-has-children ul.sub-menu{
 	display: none;
 	position: absolute;
 	bottom: 100%;
     right: 0;
 }
 
-nav.main-navigation li.menu-item-has-children:hover ul.sub-menu{
+nav#site-navigation li.menu-item-has-children:hover ul.sub-menu{
 	display: flex;
 	flex-direction: column-reverse;
 }
 
-nav.main-navigation.nav-fixed li.menu-item-has-children:hover ul.sub-menu{
+nav#site-navigation.nav-fixed li.menu-item-has-children:hover ul.sub-menu{
 	
 }
 
@@ -379,9 +383,44 @@ RESPONSIVE
 ********/
 
 @media (max-width: 600px){
+	main#page{
+		margin-top: 2em;
+	}
+	
 	nav{
-		/* todo */
+	}
+	nav#site-navigation:hover{
+		width: 100%;
+	}
+	nav#site-navigation:hover ul.menu{
+		display: block;
+	}
+	nav#site-navigation ul.menu{
 		display: none;
+	}
+	nav#site-navigation{
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: initial;
+		text-align: left;
+		height: auto;
+		width: auto;
+	}
+	nav#site-navigation .hamburger{
+		display: block;
+		padding: 0.5em;
+		font-size: 2em;
+	}
+	nav#site-navigation ul#menu-main-menu {
+		flex-direction: column;
+	}
+	nav#site-navigation li.menu-item-has-children ul.sub-menu {
+		display: block;
+		position: initial;
+		bottom: initial;
+		right: initial;
+		padding-left: 1em;
 	}
 	html{
 		font-size: 12px;
