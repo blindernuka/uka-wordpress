@@ -1,28 +1,138 @@
+section.widget_uka_program_day{
+}
+
+section.widget_uka_program_day .uka-program-day-container{
+    /*margin: 2em 0;*/
+    /* height: 73vh; */
+    display: inline-block;
+}
 
 
-
-.widget_uka_program_day table{
-	width: auto;
-	border-spacing: 0;
-	margin: 2em;
+table.uka-program-day{
+	border-collapse: collapse;
+	display: inline-block;
+	vertical-align: top;
 	table-layout: auto;
-	
 }
 
-.widget_uka_program_day td,
-.widget_uka_program_day th{
-	background-color: #fcfcfc;
-	padding: 0.5em;
+table.uka-program-day tbody.uka-day{
+	box-shadow: 0px 0px 1em 0em rgba(0, 0, 0, 0.1);
 }
 
-.widget_uka_program_day td.event-title{
+table.uka-program-day th{
+	font-weight: inherit;
+}
+
+#uka-program-day-spacer{
 	width: 100%;
+	display: inline-block;
 }
 
-.widget_uka_program_day td.event-time{
+
+.widget_uka_program_day{
+	font-size: 1em;
+}
+
+.uka-program-day-header{
+    font-weight: lighter;
+    font-weight: 100;
+}
+
+.uka-program-day .spacer{
+	padding: 0 0.25em;
+}
+
+.uka-program-day a{
+	text-decoration: underline;
+}
+
+.uka-program-day-row{
+	padding: 0.5em;
+	width: auto;
+}
+
+thead.uka-program-day-header .uka-program-day-row{
+	/*background-color: rgba(0,0,0,0.05);
+	background-color: #2a6f8a;
+	color: #e6e6e6;*/
+}
+
+.uka-day .uka-program-day-row:nth-child(odd){
+	background-color: rgba(0,0,0,0.05);
+	background-color: #7ec9dd;
+	color: #2a6f8a;
+}
+
+.uka-day .uka-program-day-row:nth-child(odd) a{
+	color: #2a6f8a;
+}
+
+.uka-day .uka-program-day-row:nth-child(even){
+	background-color: rgba(0,0,0,0.05);
+	background-color: #2a6f8a;
+	color: #e6e6e6;
+}
+
+.uka-day .uka-program-day-row:nth-child(even) a{
+	color: #e6e6e6;
+}
+
+.uka-program-day-day{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.uka-program-day td,
+table.uka-program-day th{
+	padding: 0.5em 0.5em;
+	white-space: nowrap;
+}
+
+.uka-program-day .uka-program-day-daytheme-title{
+	text-align: left;
+	float: left;
+}
+
+.uka-program-day .uka-program-day-daytheme-date{
+	text-align: right;
+	float: right;
+}
+
+.uka-program-day-daytheme-day{
+	display: none;
+}
+
+.event-location{
+	display: none;
 	text-align: center;
 }
 
-@media (max-width: 600px){
-	
+.event-time{
 }
+
+.event-ticket{
+	margin-left: 1em;
+}
+
+.uka-program-day .event-title{
+	white-space: normal;
+}
+
+@media screen and (min-width: 600px){
+	.event-location{
+		display: table-cell;
+	}
+	.uka-program-day-daytheme-day{
+		display: inline;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.uka-program-day .event-title {
+		width: 100%;
+	}
+}
+
+
+
+
