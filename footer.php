@@ -23,7 +23,6 @@ if ($nav != null){
 ?>
 
 <footer id="colophon" class="site-footer" role="contentinfo">
-	<br>
 	<div class="container row flex space-around">
 	
 	<?php if ( get_theme_mod('uka_footer_logo')): ?>
@@ -32,7 +31,6 @@ if ($nav != null){
 	
 	</div><!-- .container -->
 	
-	<br>
 	
 	<?php if ( get_theme_mod('uka_footer_credits')): ?>
 		<div class="container row flex space-around">
@@ -45,8 +43,6 @@ if ($nav != null){
 			<span class="credits"><?php echo '© '.get_theme_mod('uka_footer_copyright').' '.date('Y') ?></span>
 		</div><!-- .container -->
 	<?php endif; ?>
-	
-	<br>
 	
 </footer><!-- .site-footer -->
 

@@ -283,6 +283,9 @@ footer.site-footer{
 	color: #0c0e1f;
 	position: relative;
 	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
 }
 
 footer.site-footer .credits{
