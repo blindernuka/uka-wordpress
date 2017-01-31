@@ -63,16 +63,16 @@ if (! function_exists('uka_setup')):
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 		 */
 		add_theme_support('post-thumbnails');
-		set_post_thumbnail_size(486, 0);
+		set_post_thumbnail_size(432, 0);
 		
 		
-		update_option( 'thumbnail_size_w', 162 );
+		update_option( 'thumbnail_size_w', 144 );
 		update_option( 'thumbnail_size_h', 0 );
-		update_option( 'medium_size_w', 216 );
+		update_option( 'medium_size_w', 288 );
 		update_option( 'medium_size_h', 0 );
 		//update_option( 'medium_large_size_w', 300 );
 		//update_option( 'medium_large_size_h', 0 );
-		update_option( 'large_size_w', 648 );
+		update_option( 'large_size_w', 576 );
 		update_option( 'large_size_h', 0 );
 		
 		add_theme_support('post-formats', array('link'));
