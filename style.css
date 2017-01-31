@@ -182,9 +182,9 @@ nav#site-navigation.nav-fixed li.menu-item-has-children:hover ul.sub-menu{
 	
 }
 
-nav#site-navigation.dropdown ul.sub-menu{
+nav#site-navigation.dropdown li.menu-item-has-children:hover ul.sub-menu{
 	flex-direction: column;
-	bottom: inherit;
+	bottom: initial;
 }
 
 nav#site-navigation.nav-fixed{
