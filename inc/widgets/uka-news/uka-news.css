@@ -93,5 +93,6 @@ POSTS
 **/
 section#articles article{
 	width: 36em;
-	margin: 4em auto;
+    margin: 0 auto;
+    padding: 4em 0;
 }

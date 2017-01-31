@@ -18,6 +18,7 @@ html{
 	font-weight: normal;
 	font-weight: 300;
 	font-size: 16px;
+	height: 100%;
 }
 
 html.no-js{
@@ -25,7 +26,7 @@ html.no-js{
 }
 
 body{
-	height: 88vh;
+	height: 100%;
 }
 
 body.single .entry-content,
@@ -248,16 +249,16 @@ section#home aside#home-bottom-right{
 /*******************
 MAIN
 ********/
-main#main{
-	display: flex;
-	flex-direction: column;
-}
-
 main#page{
-	min-height: calc(94% - 12em);
-	padding-bottom: 12em;
+	min-height: 100%;
+	margin-bottom: -12em;
 }
 
+main#page:after{
+	content: "";
+	display: block;
+	height: 12em; 
+}
 
 /*******************
 SIDEBAR
