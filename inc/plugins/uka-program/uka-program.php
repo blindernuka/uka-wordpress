@@ -49,7 +49,7 @@ require(get_template_directory().'/inc/widgets/uka-program-countdown/uka-program
 
 function get_eventgroup_data($eventgroup){
 
-	$API_URL = 'http://blindernuka.no/billett/api/';
+	$API_URL = 'https://billett.blindernuka.no/billett/api/';
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $API_URL.'eventgroup/'.$eventgroup);
@@ -57,6 +57,8 @@ function get_eventgroup_data($eventgroup){
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_FAILONERROR, true);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 2);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	$jsonData = curl_exec($ch);
 	curl_close($ch);
 	
