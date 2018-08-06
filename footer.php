@@ -22,6 +22,8 @@ if ($nav != null){
 */
 ?>
 
+<?php if (get_theme_mod('uka_footer_enabled', false)): ?>
+
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="container row flex space-around">
 	
@@ -45,6 +47,8 @@ if ($nav != null){
 	<?php endif; ?>
 	
 </footer><!-- .site-footer -->
+
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>

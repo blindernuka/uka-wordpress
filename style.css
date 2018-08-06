@@ -251,14 +251,14 @@ MAIN
 ********/
 main#page{
 	min-height: 100%;
-	margin-bottom: -12em;
+	/* margin-bottom: -12em; */
 }
 
-main#page:after{
-	content: "";
-	display: block;
-	height: 12em; 
-}
+/* main#page:after{ */
+	/* content: ""; */
+	/* display: block; */
+	/* height: 12em;  */
+/* } */
 
 /*******************
 SIDEBAR

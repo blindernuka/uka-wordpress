@@ -57,6 +57,10 @@ function uka_customizer_css(){
 		nav.main-navigation a:hover{color:<?php echo get_theme_mod('link-hover-color', $DEFAULTS['LINK_HOVER_COLOR']); ?>;}
 		nav.main-navigation > ul.flex{justify-content:<?php echo get_theme_mod('justify-content', $DEFAULTS['JUSTIFY-CONTENT']); ?>;}
 		main#page article, div#page article a{color:<?php echo get_theme_mod('light-text-color', $DEFAULTS['LIGHT_TEXT_COLOR']); ?>;}
+		<?php if (get_theme_mod('uka_footer_enabled', false)): ?>
+		main#page{margin-bottom: -12em;}
+		main#page:after { content: ""; display: block; height: 12em;}
+		<?php endif; ?>
 	</style>
 <?php
 }
@@ -206,6 +210,20 @@ function uka_footer_customizer($wp_customize){
 			'title'       => __( 'Footer', 'uka' ),
 			'priority'    => 1000,
 			'description' => '',
+		)
+	);
+	
+	$wp_customize->add_setting('uka_footer_enabled');
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 
+			'uka_footer_enabled', 
+			array(
+				'label'    => __( 'Footer enabled', 'uka' ),
+				'section'  => 'uka_footer_section',
+				'settings' => 'uka_footer_enabled',
+				'type'     => 'checkbox',
+			)
 		)
 	);
 
