@@ -3,6 +3,7 @@
 	text-align: center;
 	font-size: 3em;
 	font-weight: bold;
-	color: #fcfcfc;
+	color: rgba(255, 255, 255, 0.87);
+	text-shadow: 0, 0, 1em rgba(0, 0, 0, 0.5);
 	line-height: 1em;
 }
