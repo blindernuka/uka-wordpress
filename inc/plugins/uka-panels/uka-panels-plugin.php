@@ -37,8 +37,8 @@ function uka_panels_style(){
 add_action('wp_enqueue_scripts', 'uka_panels_style');
 
 function uka_panels_widget_init(){
-	$panels = intval(get_option('panels'));
-	if ($panels > 0){			
+	$panels = intval(get_theme_mod('panels', 0));
+	if ($panels > 0){
 		for ($i = 1; $i < $panels + 1; $i++){
 			$title = get_theme_mod('panel-'.$i.'-title');
 			$title = $title == '' ? 'Panel '.$i : 'Panel '.$i.' - '.$title;
