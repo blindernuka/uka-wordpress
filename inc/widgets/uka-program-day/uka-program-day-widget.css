@@ -49,33 +49,16 @@ table.uka-program-day th{
 .uka-program-day-row{
 	padding: 0.5em;
 	width: auto;
+	background-color: #ffd530;
+	color: #161617;
 }
 
-thead.uka-program-day-header .uka-program-day-row{
-	/*background-color: rgba(0,0,0,0.05);
-	background-color: #2a6f8a;
-	color: #e6e6e6;*/
-}
 
-.uka-day .uka-program-day-row:nth-child(odd){
-	background-color: rgba(0,0,0,0.05);
-	background-color: #7ec9dd;
-	color: #2a6f8a;
-}
-
-.uka-day .uka-program-day-row:nth-child(odd) a{
-	color: #2a6f8a;
-}
 
 .uka-day .uka-program-day-row:nth-child(even){
-	background-color: rgba(0,0,0,0.05);
-	background-color: #2a6f8a;
-	color: #e6e6e6;
+	background-color: #fcb841;
 }
 
-.uka-day .uka-program-day-row:nth-child(even) a{
-	color: #e6e6e6;
-}
 
 .uka-program-day-day{
 	width: 100%;
@@ -132,6 +115,7 @@ table.uka-program-day th{
 		width: 100%;
 	}
 }
+
 
 
 

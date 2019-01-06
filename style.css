@@ -279,13 +279,14 @@ footer.site-footer{
 	margin-top: -12em; /* negative value of footer height */
 	min-height: 12em;
 	clear: both;
-	background-color: #e73b3c;
-	color: #0c0e1f;
+	background-color: #161617;
+	color: #ffffff;
 	position: relative;
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: column;
+	border-top: 2px solid #fcd404;
 }
 
 footer.site-footer .credits{
