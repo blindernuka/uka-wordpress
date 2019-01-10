@@ -12,7 +12,7 @@
 	<?php ?>	
 	<a class="entry-anchor" href="<?php echo esc_url(get_the_content()); ?>">
 	<?php if (has_post_thumbnail()) : ?>
-			<img class="entry-thumbnail" src="<?php the_post_thumbnail_url() ?>">
+			<img class="entry-thumbnail" alt="" src="<?php the_post_thumbnail_url() ?>">
 	<?php else: ?>
 		<img class="entry-thumbnail" src="<?php echo get_template_directory_uri().'/images/'.get_theme_mod('uka_post_ratio').'.png' ?>">
 	<?php endif; ?>

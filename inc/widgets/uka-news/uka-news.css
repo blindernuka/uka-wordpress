@@ -8,10 +8,12 @@ section.widget_uka_news{
 }
 
 section.widget_uka_news article.post{
-    display: inline-block;
-    height: 18em;
+	display: inline-block;
+	height: 18em;
+	width: 18em;
     margin: 2em 1em;
 	position: relative;
+	background-color: #e2a92e;
 }
 
 section.widget_uka_news article.post:first-child{
@@ -62,7 +64,7 @@ section.widget_uka_news article.post header.entry-header{
 	padding: 0.5em;
 	margin: 1em;
 	max-width: calc(100% - 3em);
-	background-color: #0c0e1f;
+	background-color: #161617;
 	position: absolute;
 	bottom: 0;
 }
