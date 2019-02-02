@@ -57,7 +57,7 @@ section.widget_uka_news article.post a.entry-anchor{
 section.widget_uka_news article.post a.entry-anchor img.entry-thumbnail{
 	height: 100%;
 	display: inline-block;
-	max-width: calc(100vw - 4em);
+	/* max-width: calc(100vw - 4em); */
 }
 
 section.widget_uka_news article.post header.entry-header{
