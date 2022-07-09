@@ -122,9 +122,3 @@ add_action('widgets_init', 'uka_remove_widgets');
 
  
 ?>
-
-
-
-
-
-
