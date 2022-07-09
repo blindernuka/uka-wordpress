@@ -59,7 +59,7 @@ class UKA_Program_Day extends WP_Widget {
 		if ($program === NULL){
 			//echo __('Error retrieving eventgroup '.$data['id'], 'uka');
 		}
-		else if (count($program['events'] > 0)){
+		else if (count($program['events']) > 0){
 			foreach ($program['events'] as $key => $event){
 				
 				if ($event['time_start'] && ($event['time_start'] >= $today) && ($event['time_start'] < $today + 86400)){
