@@ -51,7 +51,7 @@ class UKA_Program_Countdown extends WP_Widget {
 		//$eventgroup = $instance['eventgroup'];
 		//$data = get_eventgroup_data($eventgroup);
 		
-		if ($program['events'][0] !== NULL){
+		if (!empty($program['events'][0])){
 			
 			$first = $program['events'][0]['time_start'];
 			

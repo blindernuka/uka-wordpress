@@ -56,9 +56,9 @@ class UKA_Program extends WP_Widget {
 		$day = 0;
 	
 		if ($program === NULL){
-			echo __('Error retrieving eventgroup '.$data['id'], 'uka');
+			echo __('Error retrieving eventgroup ', 'uka');
 		}
-		else if (count($program['events']) > 0){
+		else if (!empty($program['events']) && is_array($program['events'])){
 			echo '<table class="uka-program">';
 			foreach ($program['events'] as $key => $event){
 				
