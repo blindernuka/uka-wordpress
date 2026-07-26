@@ -41,7 +41,7 @@ function open_graph(){
 	
 	$custom_logo_id = get_theme_mod('custom_logo');
 	$image = wp_get_attachment_image_src($custom_logo_id , 'full');
-	echo '<meta property="og:image" content="'.$image[0].'" />'."\n";
+	echo '<meta property="og:image" content="'.($image ? $image[0] : '').'" />'."\n";
 	
 }
 add_action('wp_head', 'open_graph');

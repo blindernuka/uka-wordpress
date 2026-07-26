@@ -199,7 +199,7 @@ function uka_panels_css(){
 		for ($i = 1; $i < $panels + 1; $i++):?>
 			section.panel-<?php echo $i; ?>{background-color:<?php echo get_theme_mod('panel-'.$i.'-background-color', $DEFAULTS['BACKGROUND_COLOR']); ?>;}
 			section.panel-<?php echo $i; ?>{color:<?php echo get_theme_mod('panel-'.$i.'-text-color', $DEFAULTS['LIGHT_TEXT_COLOR']); ?>;}
-			section.panel-<?php echo $i; ?> h1.widget-title{color:<?php echo get_theme_mod('panel-'.$i.'-title-color', $DEFAULTS['TITLE_COLOR']); ?>;}
+			section.panel-<?php echo $i; ?> h1.widget-title{color:<?php echo get_theme_mod('panel-'.$i.'-title-color', $DEFAULTS['TITLE_COLOR'] ?? ''); ?>;}
 		<?php
 		endfor;
 		echo '</style>';
